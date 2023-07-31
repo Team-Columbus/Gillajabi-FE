@@ -1,10 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Main, Splash, Signup, Login, Mypage, Category} from './pages'
+import './App.css'
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
@@ -15,7 +16,7 @@ function App() {
           <Route path="/category" element={<Category />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
