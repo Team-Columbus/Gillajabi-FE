@@ -1,7 +1,9 @@
 import React from 'react';
+import '../../styles/pages/Splash.css'
+import splashImg from '../../assets/splashHand.png'
 
 const Splash = () => {
-  
+
   return (
     <div className='splash'>
       <div className='splash-text'>
@@ -11,7 +13,7 @@ const Splash = () => {
         <h2>길라잡이</h2>
       </div>
       <div className='splash-imgwrapper'>
-        <img src='' alt='splash-img'/>
+        <img src={splashImg} alt='splash-img'/>
       </div>
       <div className='splash-footer'>
         <p>@ Team-Colombus</p>

@@ -1,0 +1,41 @@
+.splash {
+  box-sizing: border-box;
+  height : 100%;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+}
+.splash p, h2{
+  margin: 0;
+  padding: 0;
+}
+.splash p:nth-child(3) {
+  margin: 5% 0 ;
+}
+.splash-text {
+  font-size: 1.8em;
+  color : #3F3E3E;
+  font-weight: bold;
+}
+.splash-text h2{
+  color : #FF911B;
+}
+.splash-imgwrapper {
+  display: flex;
+  justify-content: center;
+  height : 40%;
+}
+.splash-footer {
+  text-align: center;
+}
+.splash-footer p:nth-child(1) {
+  font-weight: bold;
+}
+.splash-footer p:nth-child(2) {
+  font-size: 0.8em;
+}
