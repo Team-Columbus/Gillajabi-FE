@@ -1,0 +1,12 @@
+button{
+  border : none;
+  text-align: center;
+}
+.Large_Orange{
+  background-color: #ff911b;
+  color : #ffffff;
+}
+.Large_White{
+  background-color: #ffffff;
+  color : #ff911b;
+}
