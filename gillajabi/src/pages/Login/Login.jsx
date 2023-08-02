@@ -1,9 +1,13 @@
 import React from 'react';
+import LoginformInput from './components/LoginformInput';
 
 const Login = () => {
   return (
-    <div>
-      로그인 페이지입니다.
+    <div className='login'>
+      <h2>길라잡이</h2>
+      <form className='login-form'>
+        <LoginformInput/>
+      </form>
     </div>
   );
 };
