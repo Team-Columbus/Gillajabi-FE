@@ -1,12 +1,33 @@
 button{
   border : none;
   text-align: center;
+  white-space: nowrap;
+}
+.default{
+  background-color: #F2F3F6;
+  color : black;
+  font-weight: bold;
+  width : 40%;
+  border-radius: 8px;
+  font-size: 0.8em;
+  padding : 0.8em;
 }
 .Large_Orange{
   background-color: #ff911b;
   color : #ffffff;
+  width : 90%;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1em;
+  padding : 0.6em;
 }
 .Large_White{
   background-color: #ffffff;
   color : #ff911b;
+  border : 2px solid #ff911b;
+  font-weight: bold;
+  width : 90%;
+  font-size: 1em;
+  border-radius: 8px;
+  padding : 0.6em;
 }
