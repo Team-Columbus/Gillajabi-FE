@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginformInput from './components/LoginformInput';
+import '../../styles/pages/Login.css';
 
 const Login = () => {
   return (
