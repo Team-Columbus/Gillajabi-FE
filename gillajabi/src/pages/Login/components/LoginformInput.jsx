@@ -1,33 +1,30 @@
 import React, { useState } from 'react';
 
-const LoginformInput = () => {
+const LoginformInput = ({ formData, handleChange }) => {
 
   const [showPassword, setShowPassword] = useState(false);
-  const [password, setPassword] = useState('');
 
   const handlePasswordToggle = () => {
     setShowPassword((prevState) => !prevState);
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
   return (
     <div className='login-form-input'>
-      <label htmlFor='id'>아이디</label>
+      <label htmlFor='user_id'>아이디</label>
       <input
         type="text"
-        name="id"
+        name="user_id"
         placeholder="아이디"
+        value={formData.user_id}
+        onChange={handleChange}
       />
       <label htmlFor='password'>비밀번호</label>
       <input
         type={showPassword ? "text" : "password"}
         name="password"
         placeholder="비밀번호"
-        value={password}
-        onChange={handlePasswordChange}
+        value={formData.password}
+        onChange={handleChange}
       />
       <label htmlFor="showPassword">
         <input
