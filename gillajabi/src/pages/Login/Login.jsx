@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { useUserStore } from '../../stores/userStore';
 import LoginformButton from './components/LoginformButton';
 import LoginformInput from './components/LoginformInput';
 import '../../styles/pages/Login.css';
 
 const Login = () => {
+
+  const {setUser} = useUserStore();
   const [formData, setFormData] = useState({
     user_id : '',
     password : '',
@@ -37,6 +40,7 @@ const Login = () => {
   
       if (response.status >= 200 && response.status < 300) {
         const token = response.data.token;
+        setUser(response.data.user);
         localStorage.setItem('token', token);
         navigate('/');
       } else {
