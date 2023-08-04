@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Main, Splash, Signup, Login, Mypage, Category} from './pages'
+import { useUserStore } from './stores/userStore';
 import './App.css'
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const { getUserInfo } = useUserStore();
 
   useEffect(() => {
     const visited = sessionStorage.getItem('visited');
@@ -20,6 +22,11 @@ function App() {
       const timer = setTimeout(hideSplashScreen, 4000);
 
       return () => clearTimeout(timer);
+    }
+
+    const token = localStorage.getItem('accessToken');
+    if(token){
+      getUserInfo(token);
     }
   }, []);
 

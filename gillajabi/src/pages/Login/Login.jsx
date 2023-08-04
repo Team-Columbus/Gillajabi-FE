@@ -39,9 +39,9 @@ const Login = () => {
       });
   
       if (response.status >= 200 && response.status < 300) {
-        const token = response.data.token;
+        const token = response.data.access_token;
         setUser(response.data.user);
-        localStorage.setItem('token', token);
+        localStorage.setItem('accessToken', token);
         navigate('/');
       } else {
         if (response.status >= 400) throw new Error(`클라이언트 오류: 응답 상태 코드 ${response.status}`);
