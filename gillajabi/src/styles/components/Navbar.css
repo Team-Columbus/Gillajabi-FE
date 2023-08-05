@@ -1,0 +1,14 @@
+.navbar {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    border-bottom-style: solid;
+    border-bottom-color: #b1b9c8;
+    border-bottom-width: 1px;
+
+    @media (max-width: 320px) {
+        /* 320px 이하일 때의 스타일 적용 */
+        font-size: 0.8rem;
+      }
+  }
+  
