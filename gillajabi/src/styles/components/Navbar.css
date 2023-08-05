@@ -2,13 +2,22 @@
     height: 10%;
     width: 100%;
     display: flex;
-    border-bottom-style: solid;
-    border-bottom-color: #b1b9c8;
-    border-bottom-width: 1px;
+    justify-content: space-around;
+    border-bottom: 1px solid #b1b9c8 ;
 
-    @media (max-width: 320px) {
-        /* 320px 이하일 때의 스타일 적용 */
+    @media (max-width:344px)  {
+        font-size: 0.6rem;
+      }
+
+    @media (min-width: 345px) and (max-width:449px)  {
         font-size: 0.8rem;
       }
+
+    @media (min-width: 450px) and (max-width:574px)  {
+        font-size: 1rem;
+      }
+
+    @media (min-width: 575px) {
+        font-size: 1.2rem;
+    }
   }
-  
