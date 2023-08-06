@@ -1,0 +1,21 @@
+.option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3% 0px;
+  }
+  
+  .option .option-icon {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2em;
+    margin-bottom: 10%;
+    color: #b1b9c8;
+  }
+  
+  .option .option-text {
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    font-size: 1em;
+  }
