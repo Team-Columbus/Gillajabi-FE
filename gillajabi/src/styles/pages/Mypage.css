@@ -1,0 +1,40 @@
+.mypage-information {
+    border-bottom: 1px solid black;
+    padding: 10%;
+}
+
+.mypage-name,
+.mypage-birth,
+.mypage-myInformation {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+}
+
+.mypage-myInformation .Large_Orange {
+    width: 25%;
+    border-radius: 20px;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.mypage-priavacy,
+.mypage-myInformation button {
+    margin-left: auto;
+}
+
+.mypage-name {
+    margin-bottom: 5%;
+    padding: 0px 5%;
+}
+
+.mypage-face {
+    display: flex;
+    justify-content: center;
+    margin: 10% auto;
+    font-size: 3em;
+    color: #f09ea6;
+}
+
+
+
