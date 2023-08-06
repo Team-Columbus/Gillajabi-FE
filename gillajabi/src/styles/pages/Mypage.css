@@ -5,13 +5,17 @@
 
 .mypage-name,
 .mypage-birth,
-.mypage-myInformation {
+.mypage-myInformation,
+.mypage-mySubscribe,
+.mypage-startDate,
+.mypage-endDate {
     display: flex;
     justify-content: space-between;
     font-size: 1em;
 }
 
-.mypage-myInformation .Large_Orange {
+.mypage-myInformation .Large_Orange,
+.myPage-mySubscribe .Large_Orange {
     width: 25%;
     border-radius: 20px;
     font-size: 0.7em;
@@ -23,8 +27,13 @@
     margin-left: auto;
 }
 
-.mypage-name {
+.mypage-name,
+.mypage-startDate {
     margin-bottom: 5%;
+}
+
+.mypage-name,
+.mypage-birth {
     padding: 0px 5%;
 }
 
@@ -36,5 +45,18 @@
     color: #f09ea6;
 }
 
+.mypage-subscribe {
+    padding: 10%;
+}
 
+.mypage-status {
+    padding: 10%;
+}
 
+.mypage-mySubscribe .Large_White {
+    width: 25%;
+    border-radius: 20px;
+    font-size: 0.7em;
+    font-weight: bold;
+    border: 3px solid orange;
+}

@@ -13,6 +13,10 @@ const Mypage = () => {
     //수정 페이지로 이동
   };
 
+  const subscribePage = () => {
+    //구독 페이지로 이동
+  };
+  
   return (
     <div className='mypage'>
       <Navbar
@@ -39,6 +43,27 @@ const Mypage = () => {
         <div className='mypage-birth'>
           생년월일<span className='mypage-priavacy'>2001-02-12</span>
         </div>
+      </div>
+      <div className='mypage-subscribe'>
+        <div className='mypage-mySubscribe'>
+          구독 정보
+          <Button
+            children={subscribeStatus === 0 ? '구독 하기' : '구독중'}
+            styleType={subscribeStatus === 0 ? 'Large_Orange' : 'Large_White'}
+            onClick={subscribeStatus === 0 ? subscribePage : null}
+            disabled={subscribeStatus === 0 ? false : true}
+          />
+        </div>
+        {subscribeStatus === 1 ? (
+          <div className='mypage-status'>
+            <div className='mypage-startDate'>
+              사용시작 <span className='mypage-pravacy'>2000-07-17</span>
+            </div>
+            <div className='mypage-endDate'>
+              사용만료 <span className='mypage-pravacy'>2000-08-17</span>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );
