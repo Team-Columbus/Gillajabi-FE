@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Button from '../../../components/Button';
 import fieldConfigs from './formFieldsConfig';
@@ -22,6 +22,10 @@ const SignupForm = ({currentField, setCurrentField}) => {
 
   const [alertmsg, setAlertmsg] = useState('');
   const [confirmmsg, setConfirmmsg] = useState('');
+
+  const [isVibrating, setIsVibrating] = useState(false);
+  const inputRef = useRef(null);
+
   const configs = { ...fieldConfigs };
 
   // 현재 양식 필드(currentField)에 따라 입력된 값을 검증하고, 검증 결과에 따라 오류 메시지를 표시
@@ -55,8 +59,26 @@ const SignupForm = ({currentField, setCurrentField}) => {
       }
     } else {
       alert('형식을 지켜서 다시 한번 시도해주세요 🙂');
+      setIsVibrating(true);
+      setFoucs(isFieldValid);
     }
   };
+
+  /**
+   * 입력 요소에 포커스를 설정하는 함수.
+   * @param {boolean} isFieldValid - 현재 양식 필드의 유효성 여부.
+   * @returns {void}
+  */
+  const setFoucs = (isFieldValid) =>{
+    if(currentField === 'password'){
+      if (!isFieldValid) {
+        inputRef.current = document.getElementsByName('password')[0];
+      } else {
+        inputRef.current = document.getElementsByName('confirmPassword')[0];
+      }
+    }
+    inputRef.current.focus();
+  }
 
   /**
    * 현재 필드에 따라 다음 필드로 이동하는 함수.
@@ -114,6 +136,7 @@ const SignupForm = ({currentField, setCurrentField}) => {
         return true
       } else {
         alert('중복 아이디입니다. 다른 아이디로 시도해주세요. 😉');
+        inputRef.current.focus();
       }
     } catch (error) {
       alert('확인 실패. 다시 한번 시도해주세요.😥');
@@ -132,6 +155,14 @@ const SignupForm = ({currentField, setCurrentField}) => {
       ...formFields,
       [name]: value,
     });
+  };
+
+  /**
+   * 입력 요소의 진동 효과가 종료될 때 호출되는 함수.
+   * @returns {void}
+  */
+  const handleVibrationEnd = () => {
+    setIsVibrating(false);
   };
 
   /**
@@ -174,6 +205,9 @@ const SignupForm = ({currentField, setCurrentField}) => {
             placeholder={configs[currentField].placeholder}
             value={formFields[currentField]}
             onChange={handleInputChange}
+            className={isVibrating ? 'vibrate' : ''}
+            onAnimationEnd={handleVibrationEnd}
+            ref={inputRef}
           />
           <p>{alertmsg}</p>
         </div>
@@ -185,6 +219,9 @@ const SignupForm = ({currentField, setCurrentField}) => {
               placeholder={configs['confirm'].placeholder}
               value={formFields.confirmPassword}
               onChange={handleInputChange}
+              className={isVibrating ? 'vibrate' : ''}
+              onAnimationEnd={handleVibrationEnd}
+              ref={inputRef}
             />
             <p>{confirmmsg}</p>
           </div>
