@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Welcome from './components/Welcome';
 import SignupForm from './components/SignupForm';
+import '../../styles/pages/Signup.css';
 
 const Signup = () => {
   const [currentField, setCurrentField] = useState('name');
