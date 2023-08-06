@@ -89,3 +89,27 @@
   display: flex;
   justify-content: center;
 }
+
+/* 프로그레스바 */
+.signup-form-progressbar {
+  width: 100%;
+  height: 3%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+#progress {
+  height: 100%;
+  background-color: #FF911B;
+  border-radius: 5px;
+  animation: fillProgressBar 1s ease-in-out forwards;
+}
+@keyframes fillProgressBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width, 0%);
+  }
+}
