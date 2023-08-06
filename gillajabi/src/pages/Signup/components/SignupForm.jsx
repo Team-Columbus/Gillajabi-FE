@@ -192,8 +192,15 @@ const SignupForm = ({currentField, setCurrentField}) => {
     return (formFields.password === formFields.confirmPassword);
   }
 
+  const progressPercentage = Math.floor(
+    (Object.keys(configs).indexOf(currentField) / Object.keys(configs).length) * 100
+  );
+
   return (
     <>
+      <div className='signup-form-progressbar'>
+        <div id = 'progress' style={{ '--progress-width': `${progressPercentage}%` }}></div>
+      </div>
       <label htmlFor={currentField}>
         {configs[currentField].label}
       </label>
