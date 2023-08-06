@@ -192,8 +192,9 @@ const SignupForm = ({currentField, setCurrentField}) => {
     return (formFields.password === formFields.confirmPassword);
   }
 
+  const totalSteps = 4;
   const progressPercentage = Math.floor(
-    (Object.keys(configs).indexOf(currentField) / Object.keys(configs).length) * 100
+    ((Object.keys(configs).indexOf(currentField) + 1 ) / totalSteps) * 100
   );
 
   return (
