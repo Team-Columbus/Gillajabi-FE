@@ -60,3 +60,24 @@
     font-weight: bold;
     border: 3px solid orange;
 }
+
+.mypage-information,
+.mypage-subscribe {
+    font-weight: bold;
+
+    @media (max-width: 344px) {
+        font-size: 0.9rem;
+    }
+
+    @media (min-width: 345px) and (max-width: 449px) {
+        font-size: 1.25rem;
+    }
+
+    @media (min-width: 450px) and (max-width: 574px) {
+        font-size: 1.65rem;
+    }
+
+    @media (min-width: 575px) {
+        font-size: 1.9rem;
+    }
+}
