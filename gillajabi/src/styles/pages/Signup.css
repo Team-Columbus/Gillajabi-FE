@@ -113,3 +113,33 @@
     width: var(--progress-width, 0%);
   }
 }
+
+/* welcome 컴포넌트 */
+.signup-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width : 80%;
+  min-height: 100%;
+}
+
+.signup-welcome-title{
+  font-size: 1.3em;  
+  color: #3F3E3E;
+  font-weight: bold;
+}
+.signup-welcome-imgwrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+.signup-welcome-imgwrapper > img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.signup-welcome-button{
+  display: flex;
+  justify-content: center;
+}
