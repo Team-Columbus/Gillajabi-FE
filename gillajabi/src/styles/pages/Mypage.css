@@ -1,83 +1,61 @@
-.mypage-information {
-    border-bottom: 1px solid black;
-    padding: 10%;
+.mypage{
+  font-weight: bold
 }
 
-.mypage-name,
-.mypage-birth,
-.mypage-myInformation,
-.mypage-mySubscribe,
-.mypage-startDate,
-.mypage-endDate {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1em;
+/* 사용자 정보, 구독 정보 */
+.mypage-information, .mypage-subscribe {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10%;
+  min-height : 35%;
+
+  @media (max-width: 344px) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 345px) and (max-width: 449px) {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 574px) {
+    font-size: 1.65rem;
+  }
+
+  @media (min-width: 575px) {
+    font-size: 1.9rem;
+  }
 }
 
-.mypage-myInformation .Large_Orange,
-.myPage-mySubscribe .Large_Orange {
-    width: 25%;
-    border-radius: 20px;
-    font-size: 0.7em;
-    font-weight: bold;
+/* MyInfo 컴포넌트 */
+.mypage-myinfo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width : 100%;
+  font-size: 1em;
+}
+.mypage #title{
+  font-size: 1.2em;
 }
 
-.mypage-priavacy,
-.mypage-myInformation button {
-    margin-left: auto;
+/* Mypage 버튼 */
+.mypage .Large_White, .mypage .Large_Orange{
+  width : 100%;
+  font-size: 0.8em;
 }
 
-.mypage-name,
-.mypage-startDate {
-    margin-bottom: 5%;
-}
-
-.mypage-name,
-.mypage-birth {
-    padding: 0px 5%;
-}
-
+/* 얼굴 */
 .mypage-face {
-    display: flex;
-    justify-content: center;
-    margin: 10% auto;
-    font-size: 3em;
-    color: #f09ea6;
+  display: flex;
+  justify-content: center;
+  margin: 10% auto;
+  font-size: 3em;
+  color: #f09ea6;
 }
 
-.mypage-subscribe {
-    padding: 10%;
-}
-
+/* 세부 정보 */
 .mypage-status {
-    padding: 10%;
+  padding : 5%;
 }
-
-.mypage-mySubscribe .Large_White {
-    width: 25%;
-    border-radius: 20px;
-    font-size: 0.7em;
-    font-weight: bold;
-    border: 3px solid orange;
-}
-
-.mypage-information,
-.mypage-subscribe {
-    font-weight: bold;
-
-    @media (max-width: 344px) {
-        font-size: 0.9rem;
-    }
-
-    @media (min-width: 345px) and (max-width: 449px) {
-        font-size: 1.25rem;
-    }
-
-    @media (min-width: 450px) and (max-width: 574px) {
-        font-size: 1.65rem;
-    }
-
-    @media (min-width: 575px) {
-        font-size: 1.9rem;
-    }
+.mypage-status .mypage-myinfo{
+  margin : 5%;
 }
