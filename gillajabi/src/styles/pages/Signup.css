@@ -1,0 +1,145 @@
+/* 회원가입 페이지 */
+.signup{
+  box-sizing: border-box;
+  height: 100%;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 320px) {
+    font-size: 0.8rem;
+  }
+}
+.signup p {
+  margin : 0;
+  padding : 0;
+}
+.signup > h2, label {
+  font-size: 2em;  
+  color: #3F3E3E;
+  font-weight: bold;
+}
+
+/* 회원가입 form */
+.signup-form{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width : 80%;
+  min-height: 70%;
+}
+
+/* 회원가입 input  */
+.signup-form-input{
+  box-sizing: border-box;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.signup-form-input input{
+  box-sizing: border-box;
+  width : 100%;
+  border: none;
+  border-bottom: 2px solid #f0f0f0;
+  font-size: 1.2em;
+  padding-bottom : 0.5em;
+}
+.signup-form-input #password, #confirm{
+  box-sizing: border-box;
+  height: 50%;
+  margin-bottom : 5%;
+}
+.signup-form-input input:focus{
+  border-bottom: 2px solid #FF911B;
+  outline: none;
+}
+.signup-form-input p{
+  font-size: 0.9em;
+  color : #FF911B;
+  padding : 0.5em 0 0 0.5em;
+  margin-bottom: 10%;
+}
+.signup-form-input .vibrate{
+  animation: vibrate 0.2s ease-in-out;
+  animation-iteration-count: 2; /* 애니메이션 반복 횟수 조절 */
+  animation-fill-mode: both; /* 애니메이션 후 요소를 마지막 프레임에 유지하도록 설정 */
+}
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+/* 회원가입 button  */
+.signup-form-button{
+  display: flex;
+  justify-content: center;
+}
+
+/* 프로그레스바 */
+.signup-form-progressbar {
+  width: 100%;
+  height: 3%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+#progress {
+  height: 100%;
+  background-color: #FF911B;
+  border-radius: 5px;
+  animation: fillProgressBar 1s ease-in-out forwards;
+}
+@keyframes fillProgressBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width, 0%);
+  }
+}
+
+/* welcome 컴포넌트 */
+.signup-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width : 80%;
+  min-height: 100%;
+}
+
+.signup-welcome-title{
+  font-size: 1.3em;  
+  color: #3F3E3E;
+  font-weight: bold;
+}
+.signup-welcome-imgwrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+}
+.signup-welcome-imgwrapper > img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.signup-welcome-button{
+  display: flex;
+  justify-content: center;
+}
