@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Main, Splash, Signup, Login, Mypage, Category} from './pages'
 import { useUserStore } from './stores/userStore';
+import PrivateRoute from './components/PrivateRoute';
 import './App.css'
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/mypage" element={<Mypage />} />
+              <Route path="/mypage" element={<PrivateRoute component={<Mypage/>}/>} />
               <Route path="/category" element={<Category />} />
             </>
           )}
