@@ -14,7 +14,7 @@ const Option = (props) => {
   const optionName = props.className || 'option';
 
   return (
-    <div className={optionName}>
+    <div className={optionName} onClick={props.onClick}>
       <div className='option-icon'>
         <FontAwesomeIcon icon={props.iconName} />
       </div>
