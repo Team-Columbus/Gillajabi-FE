@@ -1,69 +1,74 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar'
 import Button from '../../components/Button'
+import MyInfo from './components/MyInfo';
+import SubscriptionButton from './components/SubscriptionButton';
+import { useUserStore } from '../../stores/userStore';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/pages/Mypage.css'
 import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-//props로 회원 정보 : 이름, 생년월일, 구독 상태, 구독 시작일, 구독 만료일
 const Mypage = () => {
-  const subscribeStatus = 1; // 1 : 구독 중, 0 : 구독 안함
 
-  const Edit = () => {
-    //수정 페이지로 이동
-  };
+  const { user, getUserInfo } = useUserStore();
+  const [ isSubscribe, setIsSubscribe] = useState(user.is_subscribe);
+  const navigate = useNavigate();
 
-  const subscribePage = () => {
-    //구독 페이지로 이동
-  };
-  
+  useEffect(()=>{
+    !user && checkUser();
+  },[user])
+
+  const checkUser = () =>{
+    const token = localStorage.getItem('accessToken');
+    if(token){
+      getUserInfo(token);
+      setIsSubscribe(user.is_subscribe);
+    }
+  }
+
   return (
     <div className='mypage'>
-      <Navbar
-        pageStatus={0}
-        loginStatus={1}
-        subscribeStatus={subscribeStatus}
-      />
+      <Navbar/>
       <div className='mypage-information'>
-        <div className='mypage-myInformation'>
-          홍길동님의 정보
-          <Button
-            children={'수정하기'}
-            styleType={'Large_Orange'}
-            onClick={Edit}
-            disabled={false}
-          />
-        </div>
+        <MyInfo
+          leftChild={<span id='title'>{user.name}님의 정보</span>}
+          rightChild={
+            <Button styleType={'Large_Orange'} onClick={ ()=>navigate('/edit') }>
+              수정하기 
+            </Button>}
+        />
         <div className='mypage-face'>
           <FontAwesomeIcon icon={faFaceSmile} />
         </div>
-        <div className='mypage-name'>
-          이름 <span className='mypage-priavacy'>홍길동</span>
-        </div>
-        <div className='mypage-birth'>
-          생년월일<span className='mypage-priavacy'>2001-02-12</span>
+        <div className='mypage-status'>
+          <MyInfo 
+            leftChild={<span>이름</span>}
+            rightChild={<span className='mypage-priavacy'>{user.name}</span>}
+          />
+          <MyInfo 
+            leftChild={<span>생년월일</span>}
+            rightChild={<span className='mypage-priavacy'>{user.birth}</span>}
+          />
         </div>
       </div>
       <div className='mypage-subscribe'>
-        <div className='mypage-mySubscribe'>
-          구독 정보
-          <Button
-            children={subscribeStatus === 0 ? '구독 하기' : '구독중'}
-            styleType={subscribeStatus === 0 ? 'Large_Orange' : 'Large_White'}
-            onClick={subscribeStatus === 0 ? subscribePage : null}
-            disabled={subscribeStatus === 0 ? false : true}
-          />
-        </div>
-        {subscribeStatus === 1 ? (
+        <MyInfo 
+          leftChild={<span id='title'>구독 정보</span>}
+          rightChild={<SubscriptionButton isSubscribe={isSubscribe} />}
+        />
+        {isSubscribe && (
           <div className='mypage-status'>
-            <div className='mypage-startDate'>
-              사용시작 <span className='mypage-pravacy'>2000-07-17</span>
-            </div>
-            <div className='mypage-endDate'>
-              사용만료 <span className='mypage-pravacy'>2000-08-17</span>
-            </div>
+            <MyInfo 
+              leftChild={<span>사용시작</span>}
+              rightChild={<span className='mypage-pravacy'>{user.sub_start}</span>}
+            />
+            <MyInfo 
+              leftChild={<span>사용만료</span>}
+              rightChild={<span className='mypage-pravacy'>{user.sub_end}</span>}
+            />
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );
