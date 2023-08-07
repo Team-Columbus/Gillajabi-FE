@@ -1,5 +1,5 @@
 .mypage{
-  font-weight: bold
+  font-weight: bold;
 }
 
 /* 사용자 정보, 구독 정보 */
@@ -34,7 +34,7 @@
   font-size: 1em;
 }
 .mypage #title{
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 /* Mypage 버튼 */
@@ -57,5 +57,5 @@
   padding : 5%;
 }
 .mypage-status .mypage-myinfo{
-  margin : 5%;
+  margin-bottom : 5%;
 }
