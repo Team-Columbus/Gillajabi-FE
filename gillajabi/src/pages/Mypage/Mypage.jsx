@@ -44,11 +44,11 @@ const Mypage = () => {
         <div className='mypage-status'>
           <MyInfo 
             leftChild={<span>이름</span>}
-            rightChild={<span className='mypage-priavacy'>{user.name}</span>}
+            rightChild={<span>{user.name}</span>}
           />
           <MyInfo 
             leftChild={<span>생년월일</span>}
-            rightChild={<span className='mypage-priavacy'>{user.birth}</span>}
+            rightChild={<span>{user.birth}</span>}
           />
         </div>
       </div>
@@ -61,11 +61,11 @@ const Mypage = () => {
           <div className='mypage-status'>
             <MyInfo 
               leftChild={<span>사용시작</span>}
-              rightChild={<span className='mypage-pravacy'>{user.sub_start}</span>}
+              rightChild={<span>{user.sub_start}</span>}
             />
             <MyInfo 
               leftChild={<span>사용만료</span>}
-              rightChild={<span className='mypage-pravacy'>{user.sub_end}</span>}
+              rightChild={<span>{user.sub_end}</span>}
             />
           </div>
         )}
