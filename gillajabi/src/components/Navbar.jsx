@@ -1,38 +1,49 @@
-import React from 'react';
-import '../styles/components/Navbar.css'
+import React, { useEffect, useState } from 'react';
+import '../styles/components/Navbar.css';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useUserStore } from '../stores/userStore';
 import { faUser, faHouse, faDownload, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion, faCircleLeft } from '@fortawesome/free-regular-svg-icons';
-import Option from './Option.jsx';
+import Option from './Option';
 
-/**
- * Navbar 컴포넌트는 헤더 바를 구성하는 React 컴포넌트입니다.
- * @param {number} props.loginStatus - 로그인 상태를 나타내는 숫자 값 (0: 비로그인 상태, 1: 로그인 상태).
- * @param {number} props.pageStatus - 페이지 상태를 나타내는 숫자 값 (0: 처음화면, 1: 다른화면).
- * @param {number} props.subscribeStatus - 구독 상태를 나타내는 숫자 값 (0: 구독하지 않음, 1: 구독 중).
- * @returns {JSX.Element} 헤더 바를 나타내는 JSX 요소
- */
+const Navbar = () => {
+  const { user } = useUserStore();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-const Navbar = (props) => {
-  const loginText = props.loginStatus === 1 ? '내 정보' : '로그인 하기';
+  const [isMain, setIsMain] = useState(false);
+  const [isSubscribe, setIsSubscribe] = useState(false);
+
+  useEffect(() => {
+    setIsMain(location.pathname === '/');
+  }, [location.pathname]);
+
+  useEffect(() => {
+    setIsSubscribe(user && user.is_subscribe);
+  }, [user]);
+
+  const mainPageText = user ? '내 정보' : '로그인 하기';
+  const mainPageFunction = user ? () => navigate('/mypage') : () => navigate('/login');
 
   return (
     <div className='navbar'>
-      {props.pageStatus === 1 ? (
-        <Option iconName={faUser} Text={loginText} />
+      {/* 메인페이지일 경우: 로그인 또는 이전화면 */}
+      {isMain ? (
+        <Option iconName={faUser} Text={mainPageText} onClick={mainPageFunction} />
       ) : (
-        <Option iconName={faCircleLeft} Text={'이전화면'} />
+        <Option iconName={faCircleLeft} Text={'이전화면'} onClick={() => navigate(-1)} />
       )}
-      {props.subscribeStatus === 1 ? (
-        <Option iconName={faCircleQuestion} Text={'오늘의 문제'} />
-      ) : null}
 
-      {props.pageStatus === 0 ? (
-        <Option iconName={faHouse} Text={'처음화면'} />
-      ) : null}
+      {/* 구독 상태일 경우: 오늘의 문제 */}
+      {isSubscribe && (
+        <Option iconName={faCircleQuestion} Text={'오늘의 문제'} onClick={() => navigate('question')} />
+      )}
 
-      {props.subscribeStatus === 1 ? (
-        <Option iconName={faDownload} Text={'불러오기'} />
-      ) : null}
+      {/* 메인 페이지가 아닐 경우: 처음화면 */}
+      {!isMain && <Option iconName={faHouse} Text={'처음화면'} onClick={() => navigate('/')} />}
+
+      {/* 구독 상태일 경우: 불러오기 */}
+      {isSubscribe && <Option iconName={faDownload} Text={'불러오기'} onClick={() => navigate('/load')} />}
 
       <Option iconName={faMagnifyingGlass} Text={'돋보기'} />
     </div>

@@ -1,9 +1,10 @@
 import React from 'react';
+import Navbar from '../../components/Navbar'
 
 const Main = () => {
   return (
-    <div>
-      메인 페이지입니다.
+    <div className='main'>
+      <Navbar/>
     </div>
   );
 };
