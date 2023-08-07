@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import Button from '../../../components/Button';
 import fieldConfigs from './formFieldsConfig';
+import { useUserStore } from '../../../stores/userStore';
 
 /**
  * 회원 가입 양식을 처리하는 SignupForm 컴포넌트.
@@ -27,6 +28,7 @@ const SignupForm = ({currentField, setCurrentField}) => {
   const inputRef = useRef(null);
 
   const configs = { ...fieldConfigs };
+  const {setUser} = useUserStore();
 
   // 현재 양식 필드(currentField)에 따라 입력된 값을 검증하고, 검증 결과에 따라 오류 메시지를 표시
   useEffect(()=>{
@@ -114,6 +116,7 @@ const SignupForm = ({currentField, setCurrentField}) => {
         birth : formFields.birth,
       });
       if (response.status >= 200 && response.status < 300) {
+        setUser(response.data.user);
         alert('회원 가입 성공! 😀');
         return true
       }
