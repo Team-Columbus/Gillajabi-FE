@@ -1,0 +1,30 @@
+.sentence {
+  width: 80%;
+  margin: 8% 10%;
+  @media (max-width: 344px) {
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 345px) and (max-width: 449px) {
+    font-size: 1.15rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 574px) {
+    font-size: 1.55rem;
+  }
+
+  @media (min-width: 575px) {
+    font-size: 2rem;
+  }
+}
+
+.sentence p:first-child {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.sentence p:last-child {
+  font-size: 0.7em;
+  font-weight: bold;
+  color: #767d88;
+}
