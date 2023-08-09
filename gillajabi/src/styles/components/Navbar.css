@@ -1,23 +1,86 @@
 .navbar {
-    height: 10%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #b1b9c8 ;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #b1b9c8 ;
+  height: 8%;
+  padding: 3% 0px;
 
-    @media (max-width:344px)  {
-        font-size: 0.6rem;
-      }
+  /* 휴대폰
+  세로 모드
+  가로 : 260 ~ 480
+  세로 481 ~ 768
+  */
+  @media (min-width: 260px) and (max-width:480px) and (orientation: portrait) {
+      
+    @media (min-width: 260px) and (max-width:279px)  {
+      font-size: 0.85rem;
+    }
+    
+    @media (min-width: 280px) and (max-width:320px)  {
+      font-size: 0.95rem;
+    }
 
-    @media (min-width: 345px) and (max-width:449px)  {
-        font-size: 0.8rem;
-      }
+    @media (min-width: 321px) and (max-width:369px)  {
+      font-size: 1.05rem;
+    }
 
-    @media (min-width: 450px) and (max-width:574px)  {
-        font-size: 1rem;
-      }
-
-    @media (min-width: 575px) {
-        font-size: 1.2rem;
+    @media (min-width: 370px) and (max-width:399px)  {
+      font-size: 1.15rem;
+    }
+            
+    @media (min-width: 400px) and (max-width:429px)  {
+      font-size: 1.25rem;
+    }
+    
+    @media (min-width: 430px) and (max-width:480px)  {
+      font-size: 1.3rem;
     }
   }
+  
+  /* 탭 
+  세로 모드
+  가로 : 768 ~ 1023
+  세로 : 1024 ~
+
+  가로 모드
+  가로 : 1024 ~
+  세로 : 768 ~ 1023
+  */
+  @media ((min-width: 768px) and (orientation: portrait)) or ((min-width: 1024px) and (orientation: landscape)) {
+    font-size: 1.8rem;
+  }
+
+  /* 휴대폰 
+  가로 모드
+  가로 : 481 ~ 768
+  세로 : 260 ~ 480 
+  */
+  @media (min-width:480px) and (max-width: 768px) and (orientation: landscape) {
+ 
+    @media (min-height: 260px) and (max-height:330px)  {
+      font-size: 1rem;
+    }
+    @media (min-height: 330px) and (max-height:380px)  {
+      font-size: 1.1rem;
+    }
+
+    @media (min-height: 380px) and (max-height:430px)  {
+      font-size: 1.2rem;
+    }
+
+    @media (min-height: 430px) and (max-height:480px)  {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* 휴대폰 가로 모드 길이가 768px 이상 (Ex 아이폰 XR)*/
+  @media ((min-width: 768px) and (max-height: 480px) and  (orientation: landscape)) {
+    font-size: 1.2rem;
+  }
+
+  /* 모니터 */
+  @media (min-width: 1024px) and (min-height:1024px)  {
+    font-size: 2.2rem;
+  }
+}
