@@ -5,3 +5,10 @@ export const Load = require('./Navbar/Load.png');
 export const Login = require('./Navbar/Login.png');
 export const myInfo = require('./Navbar/myInfo.png');
 export const Solve= require('./Navbar/Solve.png');
+
+export const Atm= require('./Main/Atm.png');
+export const Cafe= require('./Main/Cafe.png');
+export const Cinema= require('./Main/Cinema.png');
+export const fastFood= require('./Main/fastFood.png');
+export const Machine= require('./Main/Machine.png');
+export const Traffic= require('./Main/Traffic.png');
