@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useUserStore } from '../stores/userStore';
 import { faUser, faHouse, faDownload, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion, faCircleLeft } from '@fortawesome/free-regular-svg-icons';
-import Option from './Option';
+import {Back, Glasses, Home, Load, Login, myInfo, Solve} from '../assets/'
 
 const Navbar = () => {
   const { user } = useUserStore();
@@ -22,30 +22,44 @@ const Navbar = () => {
     setIsSubscribe(user && user.is_subscribe);
   }, [user]);
 
-  const mainPageText = user ? '내 정보' : '로그인 하기';
+  const mainPageImg = user ? myInfo : Login ;
   const mainPageFunction = user ? () => navigate('/mypage') : () => navigate('/login');
 
   return (
     <div className='navbar'>
       {/* 메인페이지일 경우: 로그인 또는 이전화면 */}
       {isMain ? (
-        <Option iconName={faUser} Text={mainPageText} onClick={mainPageFunction} />
+        <div className='navbar-img' onClick={mainPageFunction>
+          <img src= {mainPageImg} />
+        </div>
       ) : (
-        <Option iconName={faCircleLeft} Text={'이전화면'} onClick={() => navigate(-1)} />
+        <div className='navbar-img' onClick={() => navigate(-1)}>
+          <img src= {Back} />
+        </div>        
       )}
 
       {/* 구독 상태일 경우: 오늘의 문제 */}
       {isSubscribe && (
-        <Option iconName={faCircleQuestion} Text={'오늘의 문제'} onClick={() => navigate('question')} />
+        <div className='navbar-img' onClick={() => navigate('question')}>
+          <img src= {Solve} />
+        </div>        
       )}
 
       {/* 메인 페이지가 아닐 경우: 처음화면 */}
-      {!isMain && <Option iconName={faHouse} Text={'처음화면'} onClick={() => navigate('/')} />}
-
+      {!isMain &&         
+        <div className='navbar-img' onClick={() => navigate('/')}>
+          <img src= {Home} />
+        </div>
+        
       {/* 구독 상태일 경우: 불러오기 */}
-      {isSubscribe && <Option iconName={faDownload} Text={'불러오기'} onClick={() => navigate('/load')} />}
+      {isSubscribe && 
+        <div className='navbar-img' onClick={() => navigate('/load')}>
+          <img src= {Load} />
+        </div>
 
-      <Option iconName={faMagnifyingGlass} Text={'돋보기'} />
+      <div className='navbar-img'>
+        <img src= {Glasses} />
+      </div>
     </div>
   );
 };

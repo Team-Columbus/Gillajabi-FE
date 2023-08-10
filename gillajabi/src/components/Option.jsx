@@ -14,11 +14,10 @@ const Option = (props) => {
   const optionName = props.className || 'option';
 
   return (
-    <div className={optionName} onClick={props.onClick}>
+    <div className={optionName} id ={props.id} onClick={props.onClick}>
       <div className='option-icon'>
         <FontAwesomeIcon icon={props.iconName} />
       </div>
-
       <div className='option-text'>{props.Text}</div>
     </div>
   );
