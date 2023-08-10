@@ -29,7 +29,7 @@ const Navbar = () => {
     <div className='navbar'>
       {/* 메인페이지일 경우: 로그인 또는 이전화면 */}
       {isMain ? (
-        <div className='navbar-img' onClick={mainPageFunction>
+        <div className='navbar-img' onClick={mainPageFunction}>
           <img src= {mainPageImg} />
         </div>
       ) : (
@@ -50,13 +50,15 @@ const Navbar = () => {
         <div className='navbar-img' onClick={() => navigate('/')}>
           <img src= {Home} />
         </div>
-        
+      }
+
       {/* 구독 상태일 경우: 불러오기 */}
       {isSubscribe && 
         <div className='navbar-img' onClick={() => navigate('/load')}>
           <img src= {Load} />
         </div>
-
+      }
+      
       <div className='navbar-img'>
         <img src= {Glasses} />
       </div>
