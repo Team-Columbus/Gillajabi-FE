@@ -11,10 +11,20 @@ body {
   box-sizing: border-box;
   border: 2px solid black;
   height : 100vh;
+  transform-origin: top left;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
 
   @media (min-width: 769px) {
     /* 769px 이상일 때의 스타일 적용 */
   }
+}
 
-  overflow: auto;
+/* zoom Button */
+.app-zoombuttons-container{
+  position: absolute;
+  width : 10%;
+  max-width: 40px;
+  bottom: 0;
+  right: 0;
 }
