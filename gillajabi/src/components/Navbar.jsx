@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../styles/components/Navbar.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useUserStore } from '../stores/userStore';
-import { faUser, faHouse, faDownload, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion, faCircleLeft } from '@fortawesome/free-regular-svg-icons';
 import {Back, Glasses, Home, Load, Login, myInfo, Solve} from '../assets/'
+import { useZoomStore } from '../stores/zoomStore';
 
 const Navbar = () => {
   const { user } = useUserStore();
   const location = useLocation();
   const navigate = useNavigate();
+  const { handleZoom } = useZoomStore();
 
   const [isMain, setIsMain] = useState(false);
   const [isSubscribe, setIsSubscribe] = useState(false);
@@ -30,37 +30,37 @@ const Navbar = () => {
       {/* 메인페이지일 경우: 로그인 또는 이전화면 */}
       {isMain ? (
         <div className='navbar-img' onClick={mainPageFunction}>
-          <img src= {mainPageImg} />
+          <img src= {mainPageImg} alt='myInfo/Login'/>
         </div>
       ) : (
         <div className='navbar-img' onClick={() => navigate(-1)}>
-          <img src= {Back} />
+          <img src= {Back} alt='back'/>
         </div>        
       )}
 
       {/* 구독 상태일 경우: 오늘의 문제 */}
       {isSubscribe && (
         <div className='navbar-img' onClick={() => navigate('question')}>
-          <img src= {Solve} />
+          <img src= {Solve} alt='solve'/>
         </div>        
       )}
 
       {/* 메인 페이지가 아닐 경우: 처음화면 */}
       {!isMain &&         
         <div className='navbar-img' onClick={() => navigate('/')}>
-          <img src= {Home} />
+          <img src= {Home} alt='home'/>
         </div>
       }
 
       {/* 구독 상태일 경우: 불러오기 */}
       {isSubscribe && 
         <div className='navbar-img' onClick={() => navigate('/load')}>
-          <img src= {Load} />
+          <img src= {Load} alt='load'/>
         </div>
       }
       
-      <div className='navbar-img'>
-        <img src= {Glasses} />
+      <div className='navbar-img' onClick={handleZoom}>
+        <img src= {Glasses} alt='glasses'/>
       </div>
     </div>
   );
