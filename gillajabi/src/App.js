@@ -48,8 +48,8 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/mypage" element={<PrivateRoute component={<Mypage/>}/>} />
-              <Route path="/category" element={<Category />} />
-              <Route path="/practice" element={<Practice />} />
+              <Route path="/category/:id" element={<Category />} />
+              <Route path="/practice/:id" element={<Practice />} />
             </>
           )}
         </Routes>
