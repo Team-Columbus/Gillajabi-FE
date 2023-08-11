@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Main, Splash, Signup, Login, Mypage, Category} from './pages'
 import { useUserStore } from './stores/userStore';
+import { useZoomStore } from './stores/zoomStore';
 import PrivateRoute from './components/PrivateRoute';
+import ZoomButtons from './components/ZoomButtons'
 import './App.css'
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
   const { getUserInfo } = useUserStore();
+  const { zoomLevel } = useZoomStore();
+  const mainStyle = {
+    transform: `scale(${zoomLevel / 100})`,
+  };
 
   useEffect(() => {
     const visited = sessionStorage.getItem('visited');
@@ -32,7 +38,7 @@ function App() {
   }, []);
 
   return (
-    <div className='app'>
+    <div className='app' style={mainStyle}>
       <BrowserRouter>
         <Routes>
           {showSplash ? <Route path="/" element={<Splash />} />
@@ -46,6 +52,11 @@ function App() {
             </>
           )}
         </Routes>
+        {!showSplash && (
+          <div className='app-zoombuttons-container'>
+            <ZoomButtons />
+          </div>
+        )}
       </BrowserRouter>
     </div>
   );

@@ -1,10 +1,12 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Sentence from '../../components/Sentence';
+import useReset from '../../Hooks/useReset';
 import '../../styles/pages/Main.css'
 import {Atm, Cafe, Cinema, fastFood, Machine, Traffic} from '../../assets/'
 
 const Main = () => {
+  useReset();
   const mainSentence = '어떤 분야의 학습을 원하시나요?';
   const subSentence = '원하시는 분야를 눌러주세요.';
 
@@ -17,7 +19,7 @@ const Main = () => {
       <div className='main-category'>
         {categoryList.map((info, index) => (
           <div className='main-categoryImg'>
-            <img src = {info}/>
+            <img src = {info} alt='categoryImg'/>
           </div>
         ))}
       </div>
