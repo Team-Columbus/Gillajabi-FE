@@ -12,3 +12,7 @@ export const Cinema= require('./Main/Cinema.png');
 export const fastFood= require('./Main/fastFood.png');
 export const Machine= require('./Main/Machine.png');
 export const Traffic= require('./Main/Traffic.png');
+
+export const Alone= require('./Practice/Alone.png');
+export const Preview= require('./Practice/Preview.png');
+export const Together= require('./Practice/Together.png');

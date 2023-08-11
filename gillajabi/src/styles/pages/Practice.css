@@ -1,0 +1,21 @@
+.practice{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow-y: scroll;
+} 
+
+.practice-space {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* 휴대폰 가로 */
+  @media  (max-height:480px) and (max-width:900px) and (orientation: landscape) {
+    height: 80%;
+  }
+}
+
