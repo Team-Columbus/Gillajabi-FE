@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useMovieContext } from '../context/MovieContext';
 import purchaseImg from '../../../assets/Movie/movie_main_purchase.png'
 import printImg from '../../../assets/Movie/movie_main_print.png'
+
 const Moviemain = () => {
+
   const [currentDateTime, setCurrentDateTime] = useState('');
+  const { setCurrentPage } = useMovieContext();
 
   useEffect(() => {
     updateDateTime();
@@ -11,6 +15,10 @@ const Moviemain = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handlePage = (pageName) =>{
+    setCurrentPage(pageName);
+  };
 
   const updateDateTime = () => {
     const now = new Date();
@@ -37,16 +45,22 @@ const Moviemain = () => {
         <p>{currentDateTime.timeString}</p>
       </div>
       <div className='movie-main-select'>
-        <div className='movie-main-select-button' id='purchase'>
+        <div 
+          className='movie-main-select-button' 
+          id='purchase'
+          onClick={() => handlePage('MoviePurchase')}>
           <h2>티켓 구매</h2>
           <div className='movie-main-imgwrapper'>
             <img src={purchaseImg} alt='purchaseImg'/>
           </div>
         </div>
-        <div className='movie-main-select-button' id='print'>
+        <div 
+          className='movie-main-select-button' 
+          id='print'
+          onClick={() => handlePage('MoviePrint')}>
           <h2>티켓 출력</h2>
           <div className='movie-main-imgwrapper'>
-            <img src={printImg} alt='purchaseImg'/>
+            <img src={printImg} alt='printImg'/>
           </div>
         </div>
       </div>
