@@ -1,9 +1,13 @@
 import React from 'react';
+import Moviemain from './components/Moviemain';
+import Navbar from '../../components/Navbar';
+import '../../styles/pages/Movie.css';
 
 const Movie = () => {
   return (
-    <div>
-      영화 페이지입니다.
+    <div className='movie'>
+      <Navbar/>
+      <Moviemain/>
     </div>
   );
 };
