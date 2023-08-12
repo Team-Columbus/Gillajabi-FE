@@ -1,14 +1,13 @@
 import React from 'react';
-import Moviemain from './components/Moviemain';
-import Navbar from '../../components/Navbar';
+import { MovieProvider } from './context/MovieContext';
+import MovieContent from './components/MovieContent';
 import '../../styles/pages/Movie.css';
 
 const Movie = () => {
   return (
-    <div className='movie'>
-      <Navbar/>
-      <Moviemain/>
-    </div>
+    <MovieProvider>
+      <MovieContent/>
+    </MovieProvider>
   );
 };
 
