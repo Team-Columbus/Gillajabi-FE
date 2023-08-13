@@ -3,14 +3,15 @@ import Navbar from '../../components/Navbar'
 import Sentence from '../../components/Sentence'
 import {Preview, Together, Alone} from '../../assets'
 import Select from '../../components/Select'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../../styles/pages/Practice.css'
 
 const Practice = () => {
   const params = useParams(); 
-  const practiceId = params.id;
-
-  const mainSentence = practiceId
+  const practicePath = params.path;
+  const navigate = useNavigate();
+  
+  const mainSentence = practicePath
   const subSentence = '원하시는 연습 방식을 선택해주세요'
 
   const previewPage = () => {
@@ -18,7 +19,7 @@ const Practice = () => {
   }
 
   const togetherPage = () => {
-    //같이 하기
+    navigate(`/level/${practicePath}`)
   }
 
   const alonePage = () => {
