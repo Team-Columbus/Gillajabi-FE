@@ -4,6 +4,7 @@ import MovieListItem from '../components/TopMovies/MovieListItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import '../../../styles/pages/Movie/TopMovies.css';
 
 const TopMovies = () => {
 
