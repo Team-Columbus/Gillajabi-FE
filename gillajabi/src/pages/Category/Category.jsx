@@ -7,9 +7,9 @@ import '../../styles/pages/Category.css'
 
 const Category = () => {
   const params = useParams(); 
-  const kindId = params.id;
+  const kindPath = params.path;
 
-  const mainSentence = kindId
+  const mainSentence = kindPath
   const subSentence = '원하시는 분야를 눌러주세요'
   const navigate = useNavigate();
   
@@ -22,23 +22,23 @@ const Category = () => {
       <Navbar />
       <Sentence mainSentence={mainSentence} subSentence={subSentence} />
       <div className='category-kind'>
-        {kindId === '패스트푸드' && Array.from({ length: 3 }).map((_, index) => (
-          <div className='category-kindImg' onClick={() => movePractice(kindId)}>
+        {kindPath === '패스트푸드' && Array.from({ length: 3 }).map((_, index) => (
+          <div className='category-kindImg' onClick={() => movePractice(kindPath)}>
             <img src={fastFood} alt='fastFood' key={index} />
           </div>
         ))}
-        {kindId === '영화관' && Array.from({ length: 3 }).map((_, index) => (
-          <div className='category-kindImg' onClick={() => movePractice(kindId)}>
+        {kindPath === '영화관' && Array.from({ length: 3 }).map((_, index) => (
+          <div className='category-kindImg' onClick={() => movePractice(kindPath)}>
             <img src={Cinema} alt='Cinema' key={index} />
           </div>
         ))}
-        {kindId === '카페' && Array.from({ length: 3 }).map((_, index) => (
-          <div className='category-kindImg' onClick={() => movePractice(kindId)}>
+        {kindPath === '카페' && Array.from({ length: 3 }).map((_, index) => (
+          <div className='category-kindImg' onClick={() => movePractice(kindPath)}>
             <img src={Cafe} alt='Cafe' key={index} />
           </div>
         ))}
-        {kindId === '교통' && Array.from({ length: 2 }).map((_, index) => (
-          <div className='category-kindImg' onClick={() => movePractice(kindId)} id='Traffic'>
+        {kindPath === '교통' && Array.from({ length: 2 }).map((_, index) => (
+          <div className='category-kindImg' onClick={() => movePractice(kindPath)} id='Traffic'>
             <img src={Traffic} alt='Traffic' key={index} />
           </div>
         ))}
