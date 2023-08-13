@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useMovieContext } from '../context/MovieContext';
 import purchaseImg from '../../../assets/Movie/movie_main_purchase.png'
 import printImg from '../../../assets/Movie/movie_main_print.png'
+import '../../../styles/pages/Movie/Moviemain.css';
 
 const Moviemain = () => {
 

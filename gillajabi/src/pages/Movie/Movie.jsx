@@ -1,7 +1,7 @@
 import React from 'react';
 import { MovieProvider } from './context/MovieContext';
 import MovieContent from './components/MovieContent';
-import '../../styles/pages/Movie.css';
+import '../../styles/pages/Movie/Movie.css';
 
 const Movie = () => {
   return (
