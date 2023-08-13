@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useMovieContext } from '../context/MovieContext';
 import MovieListItem from '../components/TopMovies/MovieListItem';
 import Button from '../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +12,7 @@ const TopMovies = () => {
 
   const [topMovies, setTopMovies] = useState([]);
   const [currentIdx, setCurrentIdx] = useState(0);
+  const { handlePage } = useMovieContext();
 
   useEffect(()=>{
     getTopMovies();
@@ -50,7 +52,7 @@ const TopMovies = () => {
           <FontAwesomeIcon icon={faCaretRight} />
         </button>
       </div>
-      <Button styleType='Movie_Gray'>
+      <Button styleType='Movie_Gray' onClick={() => handlePage('MovieTimeTable')}>
         전체 상영시간표 보러가기
       </Button>
     </div>

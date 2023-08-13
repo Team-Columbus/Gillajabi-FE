@@ -7,7 +7,7 @@ import '../../../styles/pages/Movie/Moviemain.css';
 const Moviemain = () => {
 
   const [currentDateTime, setCurrentDateTime] = useState('');
-  const { setCurrentPage } = useMovieContext();
+  const { handlePage } = useMovieContext();
 
   useEffect(() => {
     updateDateTime();
@@ -16,10 +16,6 @@ const Moviemain = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  const handlePage = (pageName) =>{
-    setCurrentPage(pageName);
-  };
 
   const updateDateTime = () => {
     const now = new Date();

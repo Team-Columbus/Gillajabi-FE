@@ -6,8 +6,12 @@ export const MovieProvider = ({ children }) => {
 
   const [currentPage, setCurrentPage] = useState('Moviemain');
 
+  const handlePage = (pageName) =>{
+    setCurrentPage(pageName);
+  };
+
   return (
-    <MovieContext.Provider value={{ currentPage, setCurrentPage }}>
+    <MovieContext.Provider value={{ currentPage, setCurrentPage, handlePage }}>
       {children}
     </MovieContext.Provider>
   );
