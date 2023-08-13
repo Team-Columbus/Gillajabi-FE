@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Main, Splash, Signup, Login, Mypage, Category, Practice} from './pages'
+import { Main, Splash, Signup, Login, Mypage, Category, Practice, Level} from './pages'
 import { useUserStore } from './stores/userStore';
 import { useZoomStore } from './stores/zoomStore';
 import PrivateRoute from './components/PrivateRoute';
@@ -48,8 +48,9 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/mypage" element={<PrivateRoute component={<Mypage/>}/>} />
-              <Route path="/category/:id" element={<Category />} />
-              <Route path="/practice/:id" element={<Practice />} />
+              <Route path="/category/:path" element={<Category />} />
+              <Route path="/practice/:path" element={<Practice />} />
+              <Route path="/level/:path" element={<Level />} />
             </>
           )}
         </Routes>
