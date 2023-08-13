@@ -1,8 +1,11 @@
 import React from 'react';
 
-const MovieListItem = ({e}) => {
+const MovieListItem = ({ e, isCurrent}) => {
+
+  const carouselStyle = (!isCurrent && 'inactive');
+
   return (
-    <div className='movie-topmovies-list-item'>
+    <div className={`movie-topmovies-list-item ${carouselStyle}`}>
       <div className='movie-topmovies-list-imgwrapper'>
         <img src={e.poster} alt={e.title}/>
       </div>
