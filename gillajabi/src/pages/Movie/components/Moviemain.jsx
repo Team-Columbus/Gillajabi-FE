@@ -48,7 +48,7 @@ const Moviemain = () => {
         <div 
           className='movie-main-select-button' 
           id='purchase'
-          onClick={() => handlePage('MoviePurchase')}>
+          onClick={() => handlePage('MovieTop3')}>
           <h2>티켓 구매</h2>
           <div className='movie-main-imgwrapper'>
             <img src={purchaseImg} alt='purchaseImg'/>
