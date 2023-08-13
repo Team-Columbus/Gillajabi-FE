@@ -3,6 +3,7 @@ import { useMovieContext } from '../context/MovieContext';
 import Moviemain from '../components/Moviemain';
 import MoviePurchase from './MoviePurchase';
 import TopMovies from './TopMovies';
+import MovieTimeTable from './MovieTimeTable';
 import Navbar from '../../../components/Navbar';
 
 const MovieContent = () => {
@@ -17,6 +18,9 @@ const MovieContent = () => {
       break;
     case 'TopMovies':
       currentPageComponent = <TopMovies/>;
+      break;
+    case 'MovieTimeTable':
+      currentPageComponent = <MovieTimeTable/>;
       break;
     case 'MoviePurchase':
       currentPageComponent = <MoviePurchase/>;
