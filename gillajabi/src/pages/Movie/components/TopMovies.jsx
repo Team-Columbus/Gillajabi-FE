@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieListItem from '../components/TopMovies/MovieListItem';
+import Button from '../../../components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
@@ -49,6 +50,9 @@ const TopMovies = () => {
           <FontAwesomeIcon icon={faCaretRight} />
         </button>
       </div>
+      <Button styleType='Movie_Gray'>
+        전체 상영시간표 보러가기
+      </Button>
     </div>
   );
 };
