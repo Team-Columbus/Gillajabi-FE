@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Main, Splash, Signup, Login, Mypage, Category, Practice, Level} from './pages'
+import { Main, Splash, Signup, Login, Mypage, Category, Practice, Level, Preview} from './pages'
 import { useUserStore } from './stores/userStore';
 import { useZoomStore } from './stores/zoomStore';
 import PrivateRoute from './components/PrivateRoute';
@@ -51,6 +51,7 @@ function App() {
               <Route path="/category/:path" element={<Category />} />
               <Route path="/practice/:path" element={<Practice />} />
               <Route path="/level/:path" element={<Level />} />
+              <Route path="/preview/:path" element={<Preview />} />
             </>
           )}
         </Routes>
