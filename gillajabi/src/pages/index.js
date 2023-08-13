@@ -4,4 +4,8 @@ export { Login } from './Login';
 export { Signup } from './Signup';
 export { Mypage } from './Mypage';
 export { Main } from './Main';
+export { Practice } from './Practice';
+export { Level } from './Level';
+export { Preview } from './Preview';
+export { Edit } from './Edit';
 export { Movie } from './Movie';

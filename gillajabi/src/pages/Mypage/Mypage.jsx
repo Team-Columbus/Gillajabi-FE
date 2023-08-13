@@ -5,9 +5,8 @@ import MyInfo from './components/MyInfo';
 import SubscriptionButton from './components/SubscriptionButton';
 import { useUserStore } from '../../stores/userStore';
 import { useNavigate } from 'react-router-dom';
+import Smile from '../../assets/Smile.png'
 import '../../styles/pages/Mypage.css'
-import { faFaceSmile } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Mypage = () => {
 
@@ -39,7 +38,7 @@ const Mypage = () => {
             </Button>}
         />
         <div className='mypage-face'>
-          <FontAwesomeIcon icon={faFaceSmile} />
+          <img src={Smile} />
         </div>
         <div className='mypage-status'>
           <MyInfo 
