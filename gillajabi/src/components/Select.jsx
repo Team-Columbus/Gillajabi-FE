@@ -4,7 +4,7 @@ import '../styles/components/Select.css'
 
 const Select = (props) => {
   return (
-    <div className='select'>
+    <div className='select' onClick={props.Func}>
       <div className='select-img'>
         <img src = {props.Img}/>
       </div>
