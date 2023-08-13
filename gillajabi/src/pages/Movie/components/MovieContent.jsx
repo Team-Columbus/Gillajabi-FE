@@ -2,7 +2,7 @@ import React from 'react';
 import { useMovieContext } from '../context/MovieContext';
 import Moviemain from '../components/Moviemain';
 import MoviePurchase from './MoviePurchase';
-import MovieTop3 from './MovieTop3';
+import TopMovies from './TopMovies';
 import Navbar from '../../../components/Navbar';
 
 const MovieContent = () => {
@@ -15,8 +15,8 @@ const MovieContent = () => {
     case 'Moviemain':
       currentPageComponent = <Moviemain/>;
       break;
-    case 'MovieTop3':
-      currentPageComponent = <MovieTop3/>;
+    case 'TopMovies':
+      currentPageComponent = <TopMovies/>;
       break;
     case 'MoviePurchase':
       currentPageComponent = <MoviePurchase/>;

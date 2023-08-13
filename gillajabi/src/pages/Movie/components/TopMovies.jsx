@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 
-const MovieTop3 = () => {
+const TopMovies = () => {
 
   useEffect(()=>{
     getTopMovies();
@@ -17,10 +17,10 @@ const MovieTop3 = () => {
   };
 
   return (
-    <div className='movie-top3'>
+    <div className='movie-topmovies'>
       빨리볼 수 있는 영화 TOP3입니다.
     </div>
   );
 };
 
-export default MovieTop3;
+export default TopMovies;
