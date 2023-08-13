@@ -15,17 +15,22 @@ const Edit = () => {
   }
 
   const editComplete = async () => {
-    const token = localStorage.getItem('accessToken');
-    await axios.put(`${process.env.REACT_APP_API}/api/users/profile/update/`, {
-      edit_name : userName
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.put(`${process.env.REACT_APP_API}/api/users/profile/update/`, {
+        edit_name : userName
         },
-      }
-    )
-    navigate('/mypage')
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      navigate('/mypage')
+    } catch (error) {
+      alert('수정에 실패했습니다. 다시 시도해 주세요.')
+      console.error(error.message)
+    }
   }
 
   return (
