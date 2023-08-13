@@ -16,3 +16,7 @@ export const Traffic= require('./Main/Traffic.png');
 export const Alone= require('./Practice/Alone.png');
 export const Preview= require('./Practice/Preview.png');
 export const Together= require('./Practice/Together.png');
+
+export const Advanced= require('./Level/Advanced.png');
+export const Beginner= require('./Level/Beginner.png');
+export const Intermediate= require('./Level/Intermediate.png');
