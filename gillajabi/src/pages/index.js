@@ -6,3 +6,4 @@ export { Mypage } from './Mypage';
 export { Main } from './Main';
 export { Practice } from './Practice';
 export { Level } from './Level';
+export { Preview } from './Preview';
