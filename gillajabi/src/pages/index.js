@@ -7,3 +7,4 @@ export { Main } from './Main';
 export { Practice } from './Practice';
 export { Level } from './Level';
 export { Preview } from './Preview';
+export { Edit } from './Edit';
