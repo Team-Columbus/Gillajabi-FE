@@ -15,7 +15,7 @@ const Practice = () => {
   const subSentence = '원하시는 연습 방식을 선택해주세요'
 
   const previewPage = () => {
-    //미리보기
+    navigate(`/preview/${practicePath}`)
   }
 
   const togetherPage = () => {
