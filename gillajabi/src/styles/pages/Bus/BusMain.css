@@ -1,0 +1,147 @@
+.busmain {
+  height: 100%;
+}
+
+.busmain-title {
+  height: 10%;
+  padding: 0px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ed640e;
+  font-size: 1.7rem;
+  color: white;
+}
+
+.busmain-title span {
+  font-size: 1.4rem;
+}
+
+.busmain-information {
+  display: flex;
+  align-items: center;
+  height: 13%;
+  padding: 0px 5%;
+  background-color: #17379c;
+  justify-content: space-between;
+}
+
+.information-city {
+  color: #fbc11c;
+  font-size: 1.7rem;
+  display: flex;
+  width: 40%;
+  align-items: center;
+  font-weight: bold;
+}
+
+.information-city img {
+  width: 10%;
+  height: 10%;
+}
+
+
+.information-city span {
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 5%;
+  display: flex;
+}
+
+.information-today {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  color: white;
+  height: 80%;
+}
+
+.today-date{
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.today-time {
+  display: flex;
+  margin-top: -4%;
+}
+
+.time-text {
+  font-size: 0.8rem;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.time-clock {
+  font-size: 2.7rem;
+  width: 75%;
+  text-align: right;
+  margin-left: 5%;
+}
+
+.busmain-purchase {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.purchase-onLine,
+.purchase-ticket  {
+  height: 25%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding: 0px 5%;
+  background-color: #17379c;
+  border-radius: 20px;
+}
+
+.busmain-purchase img {
+  width: 7%;
+}
+
+.sentence {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.sentence p:first-child {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1%;
+}
+
+.sentence p:last-child {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.purchase-language {
+  height: 15%;
+  width: 70%;
+  padding: 0px 5%;
+}
+
+.purchase-language {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.purchase-language .language:first-child {
+  background-color: white;
+  color: black;  
+  border: 1px solid #17379c;
+}
+
+.language {
+  padding: 3% 5%;
+  background-color: #17379c;
+  color: white;
+  border-radius: 30px;
+}
