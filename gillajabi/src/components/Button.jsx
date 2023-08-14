@@ -5,7 +5,7 @@ const Button = (props) => {
 
   const { children, styleType, onClick, disabled } = props;
 
-  const btnTypeList = ['Large_Orange','Large_White'];
+  const btnTypeList = ['Large_Orange','Large_White','Movie_Gray'];
   const btnType = btnTypeList.includes(styleType) ? styleType : 'default'
 
   return (

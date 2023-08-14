@@ -31,3 +31,11 @@ button{
   border-radius: 8px;
   padding : 0.6em;
 }
+.Movie_Gray{
+  background-color: #7c777e;
+  color : #e2e2e2;
+  border : 2px solid #e2e2e2;
+  font-size: 1em;
+  border-radius: 20px;
+  padding : 0.6em;
+}

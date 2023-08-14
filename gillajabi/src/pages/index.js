@@ -8,3 +8,4 @@ export { Practice } from './Practice';
 export { Level } from './Level';
 export { Preview } from './Preview';
 export { Edit } from './Edit';
+export { Movie } from './Movie';
