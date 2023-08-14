@@ -17,69 +17,6 @@
   font-size: 1.4rem;
 }
 
-.busmain-information {
-  display: flex;
-  align-items: center;
-  height: 13%;
-  padding: 0px 5%;
-  background-color: #17379c;
-  justify-content: space-between;
-}
-
-.information-city {
-  color: #fbc11c;
-  font-size: 1.7rem;
-  display: flex;
-  width: 40%;
-  align-items: center;
-  font-weight: bold;
-}
-
-.information-city img {
-  width: 10%;
-  height: 10%;
-}
-
-
-.information-city span {
-  color: white;
-  font-size: 1.2rem;
-  margin-left: 5%;
-  display: flex;
-}
-
-.information-today {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
-  color: white;
-  height: 80%;
-}
-
-.today-date{
-  text-align: right;
-  font-size: 0.8rem;
-}
-
-.today-time {
-  display: flex;
-  margin-top: -4%;
-}
-
-.time-text {
-  font-size: 0.8rem;
-  width: 20%;
-  display: flex;
-  align-items: center;
-}
-
-.time-clock {
-  font-size: 2.7rem;
-  width: 75%;
-  text-align: right;
-  margin-left: 5%;
-}
-
 .busmain-purchase {
   height: 75%;
   display: flex;
@@ -110,13 +47,13 @@
   height: 100%;
 }
 
-.sentence p:first-child {
+.purchase-onLine .sentence p:first-child {
   color: white;
   font-size: 2rem;
   margin-bottom: 1%;
 }
 
-.sentence p:last-child {
+.purchase-onLine .sentence p:last-child {
   color: white;
   font-size: 1.1rem;
 }
