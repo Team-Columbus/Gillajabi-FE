@@ -12,7 +12,7 @@ const Modal = (props) => {
         <button className='modal-closebtn' onClick={closeModal}>
           X
         </button>
-        <div>{children}</div>
+        <div className='modal-children'>{children}</div>
       </div>
     </div>
   );
