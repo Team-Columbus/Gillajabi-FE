@@ -1,0 +1,43 @@
+.modal-open{
+  display: block;
+}
+.modal-close{
+  display: none;
+}
+.modal-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color : rgba(0, 0, 0, 0.3);
+}
+.modal-content{
+  box-sizing: border-box;
+  display : flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height : 80%;
+  padding : 3%;
+  transform: translate(-50%, -50%);
+}
+.modal-content > button{
+  border : none;
+  background: none;
+  color : #D9D9D9;
+  font-size: 1.2rem;
+  align-self: flex-end;
+}
+.modal-content > button:hover{
+  border : none;
+  background: none;
+}
+
+/* 영화 인원수 선택 */
+#content-movie-count{
+  border-radius: 20px;
+  background-color: #3c4453;
+}
