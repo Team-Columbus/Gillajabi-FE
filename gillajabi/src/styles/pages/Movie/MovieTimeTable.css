@@ -37,6 +37,18 @@
   border-bottom: 1px solid #e2e2e2;
   padding-bottom: 3%;
   margin-bottom: 3%;
+  animation: fadeInUpMovie 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+@keyframes fadeInUpMovie {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 전체 영화 상영 시간표 - 이미지 */
