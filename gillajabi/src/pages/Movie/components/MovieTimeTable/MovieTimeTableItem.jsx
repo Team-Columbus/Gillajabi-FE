@@ -51,7 +51,10 @@ const MovieTimeTableItem = ({ item }) => {
             </div>
           ))}
         </div>
-        <Modal isOpen={isModalOpen} closeModal={closeModal}>
+        <Modal 
+          isOpen={isModalOpen} 
+          closeModal={closeModal} 
+          styleType={'movie-count'}>
           모달창 안에 들어갈 children 컴포넌트
         </Modal>
       </div>
