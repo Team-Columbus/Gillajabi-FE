@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MovieCountItem from './MovieCountItem';
 import Button from '../../../../../components/Button';
 
 const MovieCount = () => {
@@ -34,7 +35,13 @@ const MovieCount = () => {
         <p>총 <span>{total}</span>명</p>
       </div>
       <div className='movie-count-select'>
-        인원수 선택 영역 컴포넌트
+        {selectType.map((type,idx)=>(
+            <MovieCountItem 
+              key={idx}
+              count={count} 
+              handleCount={handleCount} 
+              type={type}/>
+          ))}
       </div>
       <div className='movie-count-button'>
         <Button styleType='Movie_Gray'>
