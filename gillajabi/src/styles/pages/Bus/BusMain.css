@@ -47,13 +47,15 @@
   height: 100%;
 }
 
-.purchase-onLine .sentence p:first-child {
+.purchase-onLine .sentence p:first-child,
+.purchase-ticket .sentence p:first-child {
   color: white;
   font-size: 2rem;
   margin-bottom: 1%;
 }
 
-.purchase-onLine .sentence p:last-child {
+.purchase-onLine .sentence p:last-child,
+.purchase-ticket .sentence p:last-child {
   color: white;
   font-size: 1.1rem;
 }
