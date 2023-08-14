@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MovieCountItem from './MovieCountItem';
 import Button from '../../../../../components/Button';
+import '../../../../../styles/pages/Movie/MovieCount.css';
 
 const MovieCount = () => {
 
