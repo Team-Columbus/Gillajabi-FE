@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../../../../components/Modal';
+import MovieCount from './MovieCount/MovieCount';
 
 const MovieTimeTableItem = ({ item }) => {
 
@@ -55,7 +56,7 @@ const MovieTimeTableItem = ({ item }) => {
           isOpen={isModalOpen} 
           closeModal={closeModal} 
           styleType={'movie-count'}>
-          모달창 안에 들어갈 children 컴포넌트
+          <MovieCount/>
         </Modal>
       </div>
     </div>
