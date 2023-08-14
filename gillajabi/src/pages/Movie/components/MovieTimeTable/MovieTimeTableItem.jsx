@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../../../../components/Modal';
 
 const MovieTimeTableItem = ({ item }) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   let ratingClass = '';
 
@@ -34,12 +45,15 @@ const MovieTimeTableItem = ({ item }) => {
         </div>
         <div className='movie-timetable-item-info-content'>
           {item.detail.map((info, idx) => (
-            <div key={idx} className='time-seat'>
+            <div key={idx} className='time-seat' onClick={openModal}>
               <p>{info.start_time}</p>
               <p>{`${info.seat_number}/${info.max_seat}`}</p>
             </div>
           ))}
         </div>
+        <Modal isOpen={isModalOpen} closeModal={closeModal}>
+          모달창 안에 들어갈 children 컴포넌트
+        </Modal>
       </div>
     </div>
   );
