@@ -7,14 +7,14 @@ import '../../../../../styles/pages/Movie/MovieCount.css';
 const MovieCount = () => {
 
   const [count, setCount] = useState({
-    일반: 0,
-    청소년: 0,
-    장애인: 0,
-    경로우대: 0,
+    normal: 0,
+    teen: 0,
+    disabled: 0,
+    silver: 0,
   });
 
   const { handlePage } = useMovieContext();
-  const selectType = ['일반', '청소년', '장애인', '경로우대'];
+  const selectType = ['normal', 'teen', 'disabled', 'silver'];
   const maxTotalCount = 8;
 
   const total = Object.values(count).reduce((total, c) => total + c, 0);
@@ -46,8 +46,8 @@ const MovieCount = () => {
               type={type}/>
           ))}
       </div>
-      <div className='movie-count-button' onClick={()=>handlePage('MovieSelectSeat')}>
-        <Button styleType='Movie_Gray'>
+      <div className='movie-count-button'>
+        <Button styleType='Movie_Gray' onClick={()=>handlePage('MovieSelectSeat')}>
           좌석 선택하러 가기
         </Button>
       </div>
