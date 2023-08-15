@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 import Calendar from 'react-calendar';
-import '../../../../styles/pages/Bus/SelectCalendar.css';
+import '../../../../styles/pages/Bus/BusSelect/SelectCalendar.css';
 
 const SelectCalendar = (props) => {
   

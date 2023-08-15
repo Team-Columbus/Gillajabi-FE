@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../../styles/pages/Bus/SelectCity.css'
+import '../../../../styles/pages/Bus/BusSelect/SelectCity.css'
 
 const SelectCity = (props) => {
   return (
