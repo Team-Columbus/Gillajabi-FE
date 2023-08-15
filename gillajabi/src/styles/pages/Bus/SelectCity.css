@@ -1,0 +1,25 @@
+.selectcity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid blue;
+  height: 70%;
+  border-radius: 20px;
+}
+
+
+.selectcity-text,
+.selectcity-city {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectcity-city {
+  margin-top: 2%;
+  font-size: 1.8rem;
+}
+
+.selectcity-text img {
+  width: 8%;
+}
