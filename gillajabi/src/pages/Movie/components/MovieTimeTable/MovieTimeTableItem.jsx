@@ -5,14 +5,7 @@ import MovieCount from './MovieCount/MovieCount';
 const MovieTimeTableItem = ({ item }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const [selectSeatNum, setSelectSeatNum] = useState(null);
 
   let ratingClass = '';
 
@@ -34,6 +27,16 @@ const MovieTimeTableItem = ({ item }) => {
       break;
   }
 
+  const openModal = (seatNumber) => {
+    setIsModalOpen(true);
+    setSelectSeatNum(seatNumber);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectSeatNum(null);
+  };
+
   return (
     <div className='movie-timetable-item'>
       <div className='movie-timetable-item-imgwrapper'>
@@ -46,7 +49,7 @@ const MovieTimeTableItem = ({ item }) => {
         </div>
         <div className='movie-timetable-item-info-content'>
           {item.detail.map((info, idx) => (
-            <div key={idx} className='time-seat' onClick={openModal}>
+            <div key={idx} className='time-seat' onClick={()=>openModal(info.seat_number)}>
               <p>{info.start_time}</p>
               <p>{`${info.seat_number}/${info.max_seat}`}</p>
             </div>
@@ -56,7 +59,7 @@ const MovieTimeTableItem = ({ item }) => {
           isOpen={isModalOpen} 
           closeModal={closeModal} 
           styleType={'movie-count'}>
-          <MovieCount selectedMovie = {item.title}/>
+          <MovieCount selectedMovie = {item.title} selectSeatNum= {selectSeatNum}/>
         </Modal>
       </div>
     </div>

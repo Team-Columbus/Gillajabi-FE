@@ -5,7 +5,7 @@ import MovieCountItem from './MovieCountItem';
 import Button from '../../../../../components/Button';
 import '../../../../../styles/pages/Movie/MovieCount.css';
 
-const MovieCount = ({selectedMovie}) => {
+const MovieCount = ({ selectedMovie, selectSeatNum }) => {
 
   const [count, setCount] = useState({
     normal: 0,
@@ -15,7 +15,7 @@ const MovieCount = ({selectedMovie}) => {
   });
 
   const { handlePage } = useMovieContext();
-  const { setUserCount, setSelectedMovie } = useMovieStore();
+  const { setUserCount, setSelectedMovie, setSelectSeatNum } = useMovieStore();
   const selectType = ['normal', 'teen', 'disabled', 'silver'];
   const maxTotalCount = 8;
 
@@ -36,6 +36,7 @@ const MovieCount = ({selectedMovie}) => {
     if(total){
       setUserCount(count);
       setSelectedMovie(selectedMovie);
+      setSelectSeatNum(selectSeatNum);
       handlePage('MovieSelectSeat');
     } else {
       alert('관람 인원을 선택해주세요 😉');
