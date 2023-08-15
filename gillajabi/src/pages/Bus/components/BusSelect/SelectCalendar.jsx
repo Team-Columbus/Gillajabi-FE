@@ -12,9 +12,6 @@ const SelectCalendar = (props) => {
   
   return (
     <div className='selectcalendar'>
-      <div className='selectcalendar-title'>
-          출발일자를 선택하세요
-      </div>
       <div className='selectcalender-calendar'>
         <Calendar onClickDay={handleDate}  />
       </div>

@@ -14,14 +14,13 @@ const BusSelect = () => {
   const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
   const [todayDate, setTodayDate] = useState(new Date().toLocaleDateString('ko-KR', options))
 
+  const {handlePage} = useBusContext();
   return (
     <div className='busselect'>
-      <BusHeader/>
-      {showCalendar ? (<><SelectCalendar move={setShowCalendar} changeDate={setTodayDate} /></>) : 
+      {showCalendar ? (<><BusHeader text='출발일자를 선택하세요'/>
+        <SelectCalendar move={setShowCalendar} changeDate={setTodayDate} /></>) : 
       (<>
-        <div className='busselect-title'>
-          도착지를 선택하세요
-        </div>
+        <BusHeader text='도착지를 선택하세요'/>
         <div className='busselect-detail'>
           <div className='detail-depart'>
             <img src={Calender} /><span>출발일</span>
@@ -40,7 +39,7 @@ const BusSelect = () => {
           <div className='detail-selectBox'>
             <SelectCity text='출발지' city='서울' img={Depart}/>
             {'->'}
-            <SelectCity text='도착지' city='도착지 선택' img={Arrive}/>
+            <SelectCity text='도착지' city='도착지 선택' img={Arrive} func={handlePage}/>
           </div>  
           <div className='detail-excuse'>
             <div className='excuse-line'>
