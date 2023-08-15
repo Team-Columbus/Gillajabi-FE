@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMovieStore } from '../../../stores/MovieStore';
 import Button from '../../../components/Button';
+import '../../../styles/pages/Movie/MovieSelectSeat.css';
 
 const MovieSelectSeat = () => {
 
