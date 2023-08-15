@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useMovieContext } from '../../../context/MovieContext';
+import { useMovieStore } from '../../../../../stores/MovieStore';
 import MovieCountItem from './MovieCountItem';
 import Button from '../../../../../components/Button';
 import '../../../../../styles/pages/Movie/MovieCount.css';
 
-const MovieCount = () => {
+const MovieCount = ({selectedMovie}) => {
 
   const [count, setCount] = useState({
     normal: 0,
@@ -14,6 +15,7 @@ const MovieCount = () => {
   });
 
   const { handlePage } = useMovieContext();
+  const { setUserCount, setSelectedMovie } = useMovieStore();
   const selectType = ['normal', 'teen', 'disabled', 'silver'];
   const maxTotalCount = 8;
 
@@ -29,6 +31,16 @@ const MovieCount = () => {
       alert(`최대 ${maxTotalCount}매까지 선택할 수 있습니다 ☺`)
     }
   };
+
+  const moveToSelectSeat = () =>{
+    if(total){
+      setUserCount(count);
+      setSelectedMovie(selectedMovie);
+      handlePage('MovieSelectSeat');
+    } else {
+      alert('관람 인원을 선택해주세요 😉');
+    }
+  }
 
   return (
     <div className='movie-count'>
@@ -47,7 +59,7 @@ const MovieCount = () => {
           ))}
       </div>
       <div className='movie-count-button'>
-        <Button styleType='Movie_Gray' onClick={()=>handlePage('MovieSelectSeat')}>
+        <Button styleType='Movie_Gray' onClick={ moveToSelectSeat }>
           좌석 선택하러 가기
         </Button>
       </div>

@@ -56,7 +56,7 @@ const MovieTimeTableItem = ({ item }) => {
           isOpen={isModalOpen} 
           closeModal={closeModal} 
           styleType={'movie-count'}>
-          <MovieCount/>
+          <MovieCount selectedMovie = {item.title}/>
         </Modal>
       </div>
     </div>
