@@ -18,7 +18,7 @@ const BusHeader = () => {
   const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
   const year = currentDateTime.getFullYear();
   const month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0');
-  const day = currentDateTime.getDate();
+  const day = currentDateTime.getDate().toString().padStart(2, '0');
   const dayOfWeek = daysOfWeek[currentDateTime.getDay()];
   const hours = currentDateTime.getHours().toString().padStart(2, '0');
   const minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
