@@ -1,0 +1,123 @@
+.busselect {
+  height: 100%;
+}
+
+.busselect .busheader {
+  border-bottom: 1px solid white;
+  height: 12%;
+}
+
+.busselect-title {
+  display: flex;
+  align-items: center;
+  padding: 0px 5%;
+  height: 8%;
+  background-color: #17379c;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.busselect-detail {
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-depart {
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  border-bottom: 1px solid #17379c;
+  margin-top: 1%;
+}
+
+.detail-depart img{
+  height:70%;
+}
+
+
+.detail-date {
+  height: 10%;
+  width: 90%;
+  border-bottom: 1px solid #17379c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 0px;
+}
+
+.detail-date-back,
+.detail-date-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 100%;
+  border: 1px solid gray;
+  border-radius: 30px;
+}
+
+.detail-date-back {
+  margin-left: 3%;
+}
+
+.detail-date-next  {
+  margin-right: 3%;
+}
+
+.detail-selectBox {
+  height: 50%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail-selectBox .selectcity:nth-child(2) {
+  font-weight: bold;
+} 
+
+.detail-selectBox .selectcity:nth-child(2) .selectcity-city {
+  color: red;
+} 
+
+.detail-excuse {
+  height: 30%;
+  width: 80%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3%;
+}
+
+.excuse-line {
+  display: flex;
+  justify-content: center;
+  color: #17379c;
+  font-weight: bold;
+}
+
+.excuse-emphasis,
+.caution-emphasis {
+  color: red;
+  display: flex;
+}
+
+.caution-emphasis {
+  font-size: 1.2rem;
+}
+
+.detail-caution {
+  height: 15%;
+}
+
+.caution-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

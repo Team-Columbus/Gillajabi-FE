@@ -1,0 +1,62 @@
+.busheader {
+  display: flex;
+  align-items: center;
+  height: 13%;
+  padding: 0px 5%;
+  background-color: #17379c;
+  justify-content: space-between;
+}
+
+.busheader-city {
+  color: #fbc11c;
+  font-size: 1.7rem;
+  display: flex;
+  width: 40%;
+  align-items: center;
+  font-weight: bold;
+}
+
+.busheader-city img {
+  width: 10%;
+  height: 10%;
+}
+
+
+.busheader-city span {
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 5%;
+  display: flex;
+}
+
+.busheader-today {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  color: white;
+  height: 80%;
+}
+
+.today-date{
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.today-time {
+  display: flex;
+  margin-top: -4%;
+}
+
+.time-text {
+  font-size: 0.8rem;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.time-clock {
+  font-size: 2.7rem;
+  width: 75%;
+  text-align: right;
+  margin-left: 5%;
+}
