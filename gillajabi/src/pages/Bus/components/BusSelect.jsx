@@ -2,6 +2,9 @@ import React from 'react';
 import { useBusContext } from '../context/BusContext';
 import BusHeader from './BusHeader';
 import Calender from '../../../assets/Bus/BusSelect_Calender.png'
+import Depart from '../../../assets/Bus/BusSelect_Depart.png'
+import Arrive from '../../../assets/Bus/BusSelect_Arrive.png'
+import SelectCity from './BusSelect/SelectCity';
 import '../../../styles/pages/Bus/BusSelect.css'
 
 const BusSelect = () => {
@@ -27,6 +30,9 @@ const BusSelect = () => {
           </div>
         </div>
         <div className='detail-selectBox'>
+          <SelectCity text='출발지' city='서울' img={Depart}/>
+          {'->'}
+          <SelectCity text='도착지' city='도착지 선택' img={Arrive}/>
         </div>  
         <div className='detail-excuse'>
           <div className='excuse-line'>
