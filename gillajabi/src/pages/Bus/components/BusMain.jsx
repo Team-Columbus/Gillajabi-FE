@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react';
+import {React} from 'react';
 import Sentence from '../../../components/Sentence'
 import { useBusContext } from '../context/BusContext';
 import Ticket from '../../../assets/Bus/BusMain_Ticket.png'
@@ -18,7 +18,7 @@ const BusMain = () => {
       </div>
       <BusHeader />
       <div className='busmain-purchase'>
-        <div className='purchase-ticket' onClick={handlePage()}>
+        <div className='purchase-ticket' onClick={() => handlePage('BusSelect')}>
           <img src={Ticket}/>
           <Sentence mainSentence='현장발권' subSentence='승차권 바로 구매'/>
         </div>
