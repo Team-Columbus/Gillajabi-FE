@@ -20,15 +20,19 @@
   padding : 1% 5%;
   background-color: #292b31;
 }
-.movie-selectseat-header > #header-selected{
+.movie-selectseat-header-count{
   display: flex;
-  width : 70%;
+  width : 45%;
 }
-.movie-selectseat-header > #header-selected p:nth-child(1){
+.movie-selectseat-header-count > #header-selected{
+  display: flex;
+  width : 25%;
+}
+.movie-selectseat-header-count > #header-selected p:nth-child(1){
   font-size: 0.8em;
   margin-right: 2%;
 }
-.movie-selectseat-header > #header-selected p:nth-child(2){
+.movie-selectseat-header-count > #header-selected p:nth-child(2){
   font-size: 2em;
 }
 .movie-selectseat-header > #header-payment{
@@ -90,6 +94,10 @@
 .button-group > .disabled-button{
   background-color: #bababa;
 }
+.button-group > .selected-button{
+  background-color: #ff911b;
+}
 .movie-selectseat > button{
-  margin-bottom : 5%;
+  margin-bottom : 10%;
+  width : 20%;
 }
