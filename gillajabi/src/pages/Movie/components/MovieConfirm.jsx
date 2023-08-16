@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useMovieStore } from '../../../stores/MovieStore';
+import MovieConfirmInfo from './MovieConfirm/MovieConfirmInfo';
 import Button from '../../../components/Button';
 
 const MovieConfirm = () => {
@@ -49,6 +50,7 @@ const MovieConfirm = () => {
           <p>예매정보</p>
           <div id='content-hrLine'/>
         </div>
+        <MovieConfirmInfo movieInfo={movieInfo} dateInfo={dateInfo}/>
       </div>
       <Button styleType={'Movie_Red'}>
         결제할래요
