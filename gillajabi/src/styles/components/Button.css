@@ -39,3 +39,10 @@ button{
   border-radius: 20px;
   padding : 0.6em;
 }
+.Movie_Red{
+  background-color: #c4525a;
+  color : #e2e2e2;
+  font-size: 1em;
+  border-radius: 20px;
+  padding : 0.6em;
+}
