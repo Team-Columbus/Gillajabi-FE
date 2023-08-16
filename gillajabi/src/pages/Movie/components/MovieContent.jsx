@@ -4,6 +4,7 @@ import Moviemain from '../components/Moviemain';
 import MoviePurchase from './MoviePurchase';
 import TopMovies from './TopMovies';
 import MovieTimeTable from './MovieTimeTable';
+import MovieConfirm from './MovieConfirm';
 import Navbar from '../../../components/Navbar';
 import MovieSelectSeat from './MovieSelectSeat';
 
@@ -25,6 +26,9 @@ const MovieContent = () => {
       break;
     case 'MovieSelectSeat':
       currentPageComponent = <MovieSelectSeat/>;
+      break;
+    case 'MovieConfirm':
+      currentPageComponent = <MovieConfirm/>;
       break;
     case 'MoviePurchase':
       currentPageComponent = <MoviePurchase/>;
