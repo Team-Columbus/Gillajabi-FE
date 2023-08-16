@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMovieStore } from '../../../stores/MovieStore';
+import MovieSelectSeatHeader from './MovieSelectSeat/MovieSelectSeatHeader';
 import Button from '../../../components/Button';
 import '../../../styles/pages/Movie/MovieSelectSeat.css';
 
@@ -10,7 +11,7 @@ const MovieSelectSeat = () => {
   const selectedSeatNum = (40 - selectSeatNum);
   
   const selectType = ['A', 'B', 'C', 'D'];
-
+  const [totalPayment, setTotalPayment] = useState(0);
   const [selectedSeats, setSelectedSeats] = useState([]);
 
   useEffect(() => {
@@ -30,16 +31,9 @@ const MovieSelectSeat = () => {
 
   return (
     <div className='movie-selectseat'>
-      <div className='movie-selectseat-header'>
-        <div id='header-selected'>
-          <p>일반</p>
-          <p>1</p>
-        </div>
-        <div id='header-payment'>
-          <p>총 결제금액</p>
-          <p>0원</p>
-        </div>
-      </div>
+      <MovieSelectSeatHeader 
+        totalPayment={totalPayment} 
+        setTotalPayment={setTotalPayment}/>
       <div className='movie-selectseat-seat'>
         <p>SCREEN</p>
         {selectType.map((type, typeIndex) => (
