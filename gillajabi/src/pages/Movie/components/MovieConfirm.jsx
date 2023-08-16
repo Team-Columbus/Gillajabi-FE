@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useMovieContext } from '../context/MovieContext';
 import { useMovieStore } from '../../../stores/MovieStore';
 import MovieConfirmInfo from './MovieConfirm/MovieConfirmInfo';
 import Button from '../../../components/Button';
+import '../../../styles/pages/Movie/MovieConfirm.css';
 
 const MovieConfirm = () => {
 
-  const { moviePayment, selectedMovieInfo } = useMovieStore();
+  const { handlePage } = useMovieContext();
+  const { moviePayment, selectedMovieInfo, setSelectedMovieInfo } = useMovieStore();
   const [movieInfo, setMovieInfo] = useState();
   const [dateInfo, setDateInfo] = useState();
 
@@ -36,6 +39,11 @@ const MovieConfirm = () => {
     setDateInfo(formattedDate);
   };
 
+  const moveToPurchase = () =>{
+    setSelectedMovieInfo(movieInfo);
+    handlePage('MoviePurchase');
+  }
+
   return (
     <div className='movie-confirm'>
       <div className='movie-confirm-header'>
@@ -52,7 +60,7 @@ const MovieConfirm = () => {
         </div>
         <MovieConfirmInfo movieInfo={movieInfo} dateInfo={dateInfo}/>
       </div>
-      <Button styleType={'Movie_Red'}>
+      <Button styleType={'Movie_Red'} onClick={moveToPurchase}>
         결제할래요
       </Button>
     </div>
