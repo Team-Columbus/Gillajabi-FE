@@ -37,7 +37,7 @@ const MovieSelectSeat = () => {
           setUserSelectSeats ={setUserSelectSeats}
           totalCount={totalCount}/>
       </div>
-      <Button onClick={moveToConfirm}>
+      <Button styleType={'Movie_Red'} onClick={moveToConfirm}>
         결제할래요
       </Button>
     </div>
