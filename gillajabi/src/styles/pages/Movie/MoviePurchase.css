@@ -98,6 +98,8 @@
 .movie-purchase-modal{
   height : 100%;
 }
+
+/* 결제 설명 파트 */
 .movie-purchase-modal-explanation{
   box-sizing: border-box;
   display: flex;
@@ -115,6 +117,7 @@
   color : #ff911b;
 }
 
+/* 결제 키오스크 파트 */
 .movie-purchase-modal-description{
   box-sizing: border-box;
   height : 65%;
@@ -172,4 +175,71 @@
   width : 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* 티켓 출력 컴포넌트 */
+.movie-printticket-modal{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding : 5%;
+}
+.movie-printticket-modal p{
+  font-size: 1.3em;
+  margin-bottom: 1%;
+}
+
+.movie-printticket-modal-description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width : 80%;
+}
+
+/* 티켓 출력 프로그레스바 */
+.movie-printticket-modal-progressbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width : 80%;
+  height: 25%;
+}
+.movie-printticket-modal-progressbar > p {
+  font-size: 1.5em;
+}
+#modal-progressbar-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  padding : 1%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#modal-progressbar-wrapper > #modal-progressbar {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #e2e2e2;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 티켓 출력 이미지 */
+.movie-printticket-modal-imgwrapper{
+  width : 35%;
+}
+.movie-printticket-modal-imgwrapper > img{
+  width : 100%;
+  height : 100%;
+  object-fit: contain;
+}
+
+/* 티켓 출력 버튼 */
+.movie-printticket-modal > button{
+  width : 50%;
 }
