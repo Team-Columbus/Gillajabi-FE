@@ -4,12 +4,12 @@ import { useMovieStore } from '../../../../stores/MovieStore';
 const MovieSelectSeatGroup = (props) => {
 
   const { userSelectSeats, setUserSelectSeats, totalCount } = props;
-  const { selectSeatNum } = useMovieStore();
+  const { selectedMovieInfo } = useMovieStore();
 
   const [selectedSeats, setSelectedSeats] = useState([]);
 
   const selectType = ['A', 'B', 'C', 'D'];
-  const selectedSeatNum = (40 - selectSeatNum);
+  const selectedSeatNum = (40 - selectedMovieInfo.seat_number);
 
   useEffect(() => {
     updateSelectedSeats();

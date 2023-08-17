@@ -20,3 +20,8 @@ export const Together= require('./Practice/Together.png');
 export const Advanced= require('./Level/Advanced.png');
 export const Beginner= require('./Level/Beginner.png');
 export const Intermediate= require('./Level/Intermediate.png');
+
+export const payCard = require('./Movie/movie_payCard.png');
+export const payCash = require('./Movie/movie_payCash.png');
+export const payKakao = require('./Movie/movie_payKakao.png');
+export const payPayco = require('./Movie/movie_payPayco.png');

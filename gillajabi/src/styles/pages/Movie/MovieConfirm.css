@@ -1,0 +1,146 @@
+.movie-confirm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width : 100%;
+  height: 100%;
+  background-color: #3e3838;
+  color : #e2e2e2;
+}
+
+/* 예매 확인 header */
+.movie-confirm-header{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height : 10%;
+  padding : 1% 5%;
+  background-color: #292b31;
+}
+.movie-confirm-header > #header-payment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width : 30%;
+}
+.movie-confirm-header > #header-payment p:nth-child(1){
+  font-size: 0.8em;
+}
+.movie-confirm-header > #header-payment p:nth-child(2){
+  font-size: 1.8em;
+  color : #bb9e8b;
+}
+
+/* 예매 확인 content */
+.movie-confirm-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width : 100%;
+  height : 70%;
+}
+.movie-confirm-content > p:nth-child(1){
+  font-size: 1.3em;
+  margin-top : 3%;
+}
+.movie-confirm-content-line{
+  display: flex;
+  align-items: center;
+  width : 100%;
+  margin : 1% 0;
+}
+.movie-confirm-content-line > p{
+  display: flex;
+  justify-content: center;
+  width : 15%;
+  padding-left : 2%;
+  font-size : 1.3em;
+  color : #ce7491;
+}
+.movie-confirm-content-line > #content-hrLine{
+  width : 80%;
+  border-top : 2px solid #e2e2e2;
+}
+
+.movie-confirm-content-info{
+  display: flex;
+  align-items: center;
+  width : 100%;
+  height : 60%;
+}
+
+/* 예매 확인 content 이미지 */
+.movie-confirm-content-info-imgwrapper{
+  width : 25%;
+  height : 100%;
+  padding-left: 4%;
+}
+.movie-confirm-content-info-imgwrapper > img{
+  width : 100%;
+  height : 100%;
+  object-fit: contain;
+}
+
+/* 예매 확인 content detail*/
+.movie-confirm-content-info-detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width : 80%;
+  height: 80%;
+  padding-left: 3%;
+  font-size : 1.1em;
+}
+.movie-confirm-content-info-detail-movie{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 45%;
+}
+.movie-confirm-content-info-detail-movie > #detail-title{
+  display: flex;
+  align-items: center;
+}
+.movie-confirm-content-info-detail-movie > #detail-title > p{
+  font-size: 1.4em;
+}
+.rating{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width : 4%;
+  aspect-ratio: 1/1;
+  text-align: center;
+  margin-right : 3%;
+  font-size: 0.7em;
+  color : #ffffff;
+}
+.rating-12 {
+  background-color: #e8b62f;
+}
+.rating-15 {
+  background-color: #d7773b;
+}
+.rating-18 {
+  background-color: #d71d28;
+}
+.rating-ALL {
+  background-color: #279c56;
+}
+
+.movie-confirm-content-info-detail-count{
+  display: flex;
+  font-weight: bold;
+}
+.movie-confirm-content-info-detail-count > #detail-userCount{
+  margin-right: 1%;
+}
+
+/* 예매 확인 버튼 */
+.movie-confirm > button{
+  width : 25%;
+}
