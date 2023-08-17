@@ -41,7 +41,8 @@
   width: 7%;
 }
 
-.sentence {
+.purchase-ticket .sentence,
+.purchase-onLine .sentence {
   display: flex;
   flex-direction: column;
   justify-content: center;
