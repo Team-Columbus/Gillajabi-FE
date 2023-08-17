@@ -1,0 +1,47 @@
+.completepaymentmodal {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  margin-left: 10%;
+  flex-direction: column;
+}
+
+.completepaymentmodal-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 80%;
+  font-size: 1.3em;
+}
+
+.completepaymentmodal-bottom {
+  border: 1px solid red;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #17379c;
+  gap: 3%;
+}
+
+
+.completepaymentmodal-circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.completepaymentmodal-bottom-text,
+.completepaymentmodal-bottom-count {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+}

@@ -1,0 +1,160 @@
+.buspayment {
+  height: 100%;
+  position: relative;
+}
+
+.buspayment-play {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 79%;
+  gap: 3%;
+}
+
+.buspayment-detail {
+  width: 90%;
+  border: 4px solid #17379c;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.buspayment-detail-date {
+  height: 10%;
+  width: 90%;
+  padding: 2% 0px;
+}
+
+.detail-information {
+  height: 55%;
+  width: 90%;
+  display: flex;
+}
+
+.detail-information-city {
+  width: 50%;
+}
+
+.city-depart,
+.city-arrive {
+  display: flex;
+  align-items: center;
+}
+
+.city-common-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  font-size: 1.4em;
+  color: #17379c;
+}
+
+.city-common-text span {
+  font-size: 0.6em;
+}
+
+.city-common-circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #17379c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+
+.city-line {
+  width: 5px;
+  height: 25%;
+  background-color:#17379c;
+  margin: -1% 7%;
+}
+
+
+
+.detail-information-bus {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.bus-information {
+  border-bottom:  1px solid rgb(128,128,128, 0.2);
+  height: 18%;
+  color:#17379c;
+  font-weight: bold;
+}
+
+.bus-information span {
+  margin-left: 40%;
+}
+
+
+.detail-payment {
+  height: 18%;
+  width: 84%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 3%;
+  background-color: #8645b9;
+  color: white;
+  font-size: 1.5em;
+}
+
+.detail-warning {
+  height: 12%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6em;
+  color: #17379c;
+  font-weight: bold;
+}
+
+.buspayment-card {
+  width: 90%;
+  border: 4px solid #17379c;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.buspayment-card img {
+  width: 10%;
+}
+
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.buspayment-text {
+  width: 90%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: blink 1s infinite;
+  color: #17379c;
+  font-weight: bold;
+}
