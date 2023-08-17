@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useMovieStore } from '../../../stores/MovieStore';
+import Modal from '../../../components/Modal';
 import { payCard, payCash, payKakao, payPayco } from '../../../assets';
 import '../../../styles/pages/Movie/MoviePurchase.css';
 
 const MoviePurchase = () => {
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { moviePayment } = useMovieStore();
   const paymentMethods = [
     {
@@ -29,6 +31,14 @@ const MoviePurchase = () => {
     }
   ];
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className='movie-purchase'>
       <div className='movie-purchase-header'>
@@ -45,7 +55,7 @@ const MoviePurchase = () => {
               className='movie-purchase-content-pay-item'
               id={payment.method}
               key={idx}>
-              <div id='imgwrapper'>
+              <div id='imgwrapper' onClick={()=>openModal()}>
                 <img src={payment.img} alt={payment.method}/>
               </div>
               <p>{payment.displayName}</p>
@@ -53,6 +63,11 @@ const MoviePurchase = () => {
           ))}
         </div>
       </div>
+      <Modal 
+        isOpen={isModalOpen} 
+        closeModal={closeModal}
+        styleType={'movie-purchase'}>
+      </Modal>
     </div>
   );
 };
