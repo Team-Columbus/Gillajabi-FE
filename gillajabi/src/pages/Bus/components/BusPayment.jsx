@@ -51,7 +51,6 @@ const BusPayment = () => {
           </div>
           <div className='detail-information'>
             <div className='detail-information-city'>
-
               <div className='city-depart'>
                 <div className='city-common-circle'>
                   출발
@@ -60,10 +59,8 @@ const BusPayment = () => {
                   서울경부<span>평균 4시간 소요</span>
                 </div>
               </div>
-
               <div className='city-line'>
               </div>
-
               <div className='city-arrive'>
                 <div className='city-common-circle'>
                   도착
