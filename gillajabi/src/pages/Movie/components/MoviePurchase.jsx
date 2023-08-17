@@ -9,6 +9,7 @@ import '../../../styles/pages/Movie/MoviePurchase.css';
 const MoviePurchase = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showTicketModal, setShowTicketModal] = useState(false);
   const { moviePayment } = useMovieStore();
   const paymentMethods = [
     {
@@ -33,12 +34,13 @@ const MoviePurchase = () => {
     }
   ];
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openModal = (idx) => {
+    (idx === 0) && setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setShowTicketModal(false);
   };
 
   return (
@@ -57,7 +59,7 @@ const MoviePurchase = () => {
               className='movie-purchase-content-pay-item'
               id={payment.method}
               key={idx}>
-              <div id='imgwrapper' onClick={()=>openModal()}>
+              <div id='imgwrapper' onClick={()=>openModal(idx)}>
                 <img src={payment.img} alt={payment.method}/>
               </div>
               <p>{payment.displayName}</p>
@@ -69,8 +71,7 @@ const MoviePurchase = () => {
         isOpen={isModalOpen} 
         closeModal={closeModal}
         styleType={'movie-purchase'}>
-        {/* <MoviePurchaseModal/> */}
-        <MoviePrintTicketModal/>
+        {showTicketModal ? <MoviePrintTicketModal/> : <MoviePurchaseModal setShowTicketModal={setShowTicketModal}/>}
       </Modal>
     </div>
   );

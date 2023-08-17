@@ -14,7 +14,7 @@ const MoviePrintTicketModal = () => {
         clearInterval(interval);
         setIsLoad(false);
       }
-    }, 40);
+    }, 30);
 
     return () => {
       clearInterval(interval);

@@ -1,9 +1,13 @@
 import React from 'react';
 import insertCardImg from '../../../../assets/Movie/movie_insertCard.png';
 
-const MoviePurchaseModal = () => {
+const MoviePurchaseModal = ({setShowTicketModal}) => {
 
   const inlet = ['티켓 나오는곳', '지폐 넣는곳', '카드 넣는곳'];
+
+  const insertCard = () =>{
+    setShowTicketModal(true);
+  }
 
   return (
     <div className='movie-purchase-modal'>
@@ -12,6 +16,7 @@ const MoviePurchaseModal = () => {
         <p>결제할 신용카드를 넣어주세요</p>
         <p>IC칩이 앞쪽으로 보이게 하여 넣어주세요</p>
         <p>티켓출력이 완료되기 전까지 절대로 카드를 뽑지마세요!</p>
+        <p>( 카드를 클릭해 카드를 넣어주세요!)</p>
       </div>
       <div className='movie-purchase-modal-description'>
         <div id='modal-description-inlet'>
@@ -26,7 +31,7 @@ const MoviePurchaseModal = () => {
           <div id='modal-description-outlet-item'>
             <div id='item-outlet'></div>
             <div id='item-outlet'></div>
-            <div id='outlet-imgwrapper'>
+            <div id='outlet-imgwrapper' onClick={insertCard}>
               <img src={insertCardImg} alt='insertCard'/>
             </div>
           </div>
