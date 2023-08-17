@@ -1,0 +1,36 @@
+.busseatmodal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  background-color: rgba(30,58,138,0.6)
+}
+
+.busseatmodal-adult,
+.busseatmodal-student,
+.busseatmodal-cancle {
+  border: 1px solid black;
+  font-weight: bold;
+  width: 50%;
+  height: 15%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em;
+}
+
+.busseatmodal-adult,
+.busseatmodal-student {
+  color: white;
+  background-color: #17379c;
+}
+
+.busseatmodal-cancle {
+  background-color: white;
+  color: #17379c;
+}
