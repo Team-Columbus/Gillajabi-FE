@@ -1,0 +1,46 @@
+.busfinish {
+  height: 100%;
+}
+
+.busfinish-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  height: 80%;
+  justify-content: space-evenly;
+}
+
+.busfinish-detail-text {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  background-color: #d2d6fc;
+  color: #17379c;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.busfinish-detail-img {
+  width: 90%;
+  height: 65%;
+  background-color: #a1beed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.busfinish-detail-img img {
+  width: 30%;
+}
+
+.busfinish-detail-img button {
+  width: 30%;
+  height: 15%;
+  border-radius: 20px;
+}
