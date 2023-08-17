@@ -1,9 +1,58 @@
 import React from 'react';
+import { useMovieStore } from '../../../stores/MovieStore';
+import { payCard, payCash, payKakao, payPayco } from '../../../assets';
+import '../../../styles/pages/Movie/MoviePurchase.css';
 
 const MoviePurchase = () => {
+
+  const { moviePayment } = useMovieStore();
+  const paymentMethods = [
+    {
+      method: 'payCard',
+      img: payCard,
+      displayName: '신용카드'
+    },
+    {
+      method: 'payCash',
+      img: payCash,
+      displayName: '현금'
+    },
+    {
+      method: 'payKakao',
+      img: payKakao,
+      displayName: '카카오페이'
+    },
+    {
+      method: 'payPayco',
+      img: payPayco,
+      displayName: '페이코'
+    }
+  ];
+
   return (
-    <div>
-      티켓 구매 페이지입니다.
+    <div className='movie-purchase'>
+      <div className='movie-purchase-header'>
+        <div id='header-payment'>
+          <p>잔여 결제금액</p>
+          <p>{moviePayment}원</p>
+        </div>
+      </div>
+      <div className='movie-purchase-content'>
+        <p>결제 수단을 선택해주세요</p>
+        <div className='movie-purchase-content-pay'>
+          {paymentMethods.map((payment,idx)=>(
+            <div 
+              className='movie-purchase-content-pay-item'
+              id={payment.method}
+              key={idx}>
+              <div id='imgwrapper'>
+                <img src={payment.img} alt={payment.method}/>
+              </div>
+              <p>{payment.displayName}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
