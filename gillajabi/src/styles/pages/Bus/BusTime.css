@@ -1,0 +1,137 @@
+.bustime {
+  height: 100%;
+}
+
+.bustime-city {
+  height: 8%;
+  background-color: rgb(178, 202, 223);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color:blue;
+}
+
+.bustime-date {
+  height: 8%;
+  width: 100%;
+  border-bottom: 1px solid #17379c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:  #d2d6fc;
+}
+
+
+.bustime-date-back,
+.bustime-date-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  border: 1px solid gray;
+  height: 70%;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.bustime-date-back {
+  margin-left: 3%;
+}
+
+.bustime-date-next  {
+  margin-right: 3%;
+}
+
+.bustime-detail {
+  height: 55%;
+  display: flex;
+  padding: 1%;
+  gap: 1%;
+}
+
+.bustime-detail-time {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+     
+.bus-interval {
+  height: 15%;
+  border: 1px solid  #e3e5f3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  #d2d6fc;
+}
+
+.bustime-detail-bus{
+  width: 90%;
+  height: 100%;
+}
+
+.bustime-detail-menu {
+  height: 10%;
+  border: 1px solid black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color:  #d2d6fc;
+}
+
+.bus-detail-menu {
+  display: flex;
+  width: 25%;
+  justify-content: space-around;
+}
+
+.bustime-detail-information {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bustime-drive:hover {
+  background-color: #d2d6fc;
+}
+
+.bustime-drive {
+  height: 15%;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border: 1px solid  #e3e5f3;
+}
+
+.time,
+.info,
+.type,
+.seats {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bustime-detail-move {
+  width: 100%;
+  height: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:  #d2d6fc;
+}
+
+.num-box {
+  border: 1px solid black;
+  width: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  background-color: #17379c;
+  color: white;
+}
