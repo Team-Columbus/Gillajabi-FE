@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMovieStore } from '../../../stores/MovieStore';
 import Modal from '../../../components/Modal';
 import MoviePurchaseModal from './MoviePurchase/MoviePurchaseModal';
+import MoviePrintTicketModal from './MoviePurchase/MoviePrintTicketModal';
 import { payCard, payCash, payKakao, payPayco } from '../../../assets';
 import '../../../styles/pages/Movie/MoviePurchase.css';
 
@@ -68,7 +69,8 @@ const MoviePurchase = () => {
         isOpen={isModalOpen} 
         closeModal={closeModal}
         styleType={'movie-purchase'}>
-        <MoviePurchaseModal/>
+        {/* <MoviePurchaseModal/> */}
+        <MoviePrintTicketModal/>
       </Modal>
     </div>
   );
