@@ -15,7 +15,6 @@ const MovieTimeTable = () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_API}/api/theaters/CGVmovie_list/`);
       setMovieList(response.data);
-      console.log(response);
     } catch (error) {
       console.error(error.message);
     }

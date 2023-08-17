@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MovieListItem = ({ e, isCurrent}) => {
+const MovieListItem = ({ e, isCurrent, openModal}) => {
 
   const carouselStyle = (!isCurrent && 'inactive');
 
@@ -25,7 +25,7 @@ const MovieListItem = ({ e, isCurrent}) => {
         </div>
       </div>
       <div className='movie-topmovies-list-reserve'>
-        <p>지금 예매</p>
+        <p onClick={()=>openModal(e)}>지금 예매</p>
         <p>남은좌석 {e.seat_number}/{e.max_seat}</p>
       </div>
     </div>
