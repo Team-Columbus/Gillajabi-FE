@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import { useBusContext } from '../context/BusContext';
 import BusHeader from './BusHeader';
 import Calender from '../../../assets/Bus/BusSelect_Calender.png'
@@ -6,6 +6,7 @@ import Depart from '../../../assets/Bus/BusSelect_Depart.png'
 import Arrive from '../../../assets/Bus/BusSelect_Arrive.png'
 import SelectCity from './BusSelect/SelectCity';
 import SelectCalendar from './BusSelect/SelectCalendar';
+import { useBusStore } from '../../../stores/BusStore';
 import '../../../styles/pages/Bus/BusSelect.css'
 
 const BusSelect = () => {
@@ -13,8 +14,13 @@ const BusSelect = () => {
   const [showCalendar, setShowCalendar] = useState(false)
   const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
   const [todayDate, setTodayDate] = useState(new Date().toLocaleDateString('ko-KR', options))
-
   const {handlePage} = useBusContext();
+
+  const {setBusDate} = useBusStore();
+  useEffect(()=> {
+    setBusDate(todayDate);
+  }, [todayDate])
+
   return (
     <div className='busselect'>
       {showCalendar ? (<><BusHeader text='출발일자를 선택하세요'/>
