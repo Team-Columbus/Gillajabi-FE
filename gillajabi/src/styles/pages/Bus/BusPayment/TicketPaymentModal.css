@@ -1,0 +1,77 @@
+.ticketpaymentmodal {
+  height: 70%;
+  width: 80%;
+  display: flex;
+  position: absolute;
+  background-color: white;
+  margin-left: 10%;
+  flex-direction: column;
+  border: 1px solid black;
+  display: flex;
+}
+
+.ticketpaymentmodal-title {
+  height: 10%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #17379c;
+  color: #fbc11c;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.ticketpaymentmodal-detail {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ticketpaymentmodal-detail-img {
+  height: 40%;
+  border: 5px solid #17379c;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  background-color: #dfe8ff;
+}
+
+.ticketpaymentmodal-detail-img img {
+  height: 60%;
+}
+
+.ticketpaymentmodal-detail-text {
+  height: 20%;
+  border: 1px solid black;
+  width: 90%;
+  font-weight: bold;
+}
+
+.ticketpaymentmodal-detail-menu {
+  background-color: #17379c;
+  color: white;
+}
+
+.ticketpaymentmodal-detail-data {
+  color: #17379c;
+}
+
+.ticketpaymentmodal-detail-menu,
+.ticketpaymentmodal-detail-data {
+  display: flex;
+  align-items: center;
+  height: 50%;
+}
+
+.ticketMenu-data,
+.ticketData-data {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
