@@ -93,3 +93,83 @@
 .movie-purchase-content-pay > #payKakao{
   border-right: 1px solid #e2e2e2;
 }
+
+/* 결제 모달 컴포넌트 */
+.movie-purchase-modal{
+  height : 100%;
+}
+.movie-purchase-modal-explanation{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30%;
+  margin-bottom: 5%;
+  font-size: 1.2em;
+}
+.movie-purchase-modal-explanation > p:nth-child(1){
+  font-size: 1.4em;
+  margin-bottom: 2%;
+}
+.movie-purchase-modal-explanation > p:nth-child(4){
+  color : #ff911b;
+}
+
+.movie-purchase-modal-description{
+  box-sizing: border-box;
+  height : 65%;
+}
+#modal-description-inlet{
+  display: flex;
+  justify-content: space-around;
+  width : 100%;
+  height: 25%;
+  color : #c1c1c1;
+}
+#modal-description-inlet-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#modal-description-inlet-item > #item-inlet{
+  border-top: 5px solid #c1c1c1;
+  width : 80%;
+  border-radius: 20px;
+}
+#modal-description-inlet > div:nth-child(3){
+  color : white;
+  font-weight: bold;
+}
+#modal-description-inlet > div:nth-child(3) > #item-inlet{
+  border-top: 5px solid white;
+}
+
+#modal-description-outlet{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height : 75%;
+}
+#modal-description-outlet > #modal-description-outlet-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width : 100%;
+  height: 70%;
+  border : 2px solid #e2e2e2;
+  border-radius: 20px;
+}
+#modal-description-outlet-item > #item-outlet{
+  border-top: 5px solid #c1c1c1;
+  width : 25%;
+  border-radius: 20px;
+}
+#modal-description-outlet-item > #outlet-imgwrapper{
+  width : 25%;
+}
+#modal-description-outlet-item > #outlet-imgwrapper > img{
+  width : 100%;
+  height: 100%;
+  object-fit: contain;
+}
