@@ -105,13 +105,15 @@
   width: 100%;
   align-items: center;
   border: 1px solid  #e3e5f3;
+  justify-content: space-around;
 }
 
 .time,
 .info,
 .type,
-.seats {
-  width: 25%;
+.seats,
+.driveTime {
+  width: 20%;
   display: flex;
   justify-content: space-evenly;
 }

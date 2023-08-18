@@ -28,9 +28,16 @@
   border-radius: 10px;
 }
 
-.region:hover {
-  background-color: #17379c;
+.region-all {
   color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  height: 12%;
+  background-color: #17379c;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 10px;
 }
 
 .list-consonant {

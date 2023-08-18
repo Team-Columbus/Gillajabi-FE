@@ -8,11 +8,11 @@ import '../../styles/pages/Main.css'
 
 const Main = () => {
   useReset();
-  const mainSentence = '어떤 분야의 학습을 원하시나요?';
+  const mainSentence = '어떤 분야의 연습을 원하시나요?';
   const subSentence = '원하시는 분야를 눌러주세요.';
   const navigate = useNavigate();
 
-  const categoryList = [ '패스트푸드', '영화관', '카페', '교통', '무인민원발급기', 'ATM'];
+  const categoryList = [ '교통', '영화관', '패스트푸드', '카페', '무인민원발급기', 'ATM'];
   
   const imageMap = {
     패스트푸드: fastFood,
@@ -32,16 +32,17 @@ const Main = () => {
   }
 
   const movePractice = (category) => {
-    if (category === '영화관') {
-      moveMovie();
-      return null;
+    if (category === '영화관' || category === '교통') {
+      category === '영화관' ? moveMovie() : moveBus();
+      navigate(`/practice/${category}`);
+      return;
+    } else {
+      handleAlert();
     }
-    
-    if(category === '교통') {
-      moveBus();
-      return null;
-    }
-    navigate(`/practice/${category}`)
+  }
+
+  const handleAlert = () =>{
+    alert('개발중인 기능입니다 😫');
   }
 
   return (

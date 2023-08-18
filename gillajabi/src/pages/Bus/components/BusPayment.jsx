@@ -12,7 +12,7 @@ const BusPayment = () => {
   const [isPaymentModal, setIsPaymentModal] = useState(false);
   const [isTicketModal, setIsTicketModal] = useState(false)
   const {handlePage} = useBusContext();
-  const {busFare, busDestination, busDate, butTime, busRate, busCompany, busUserAdult, busUserStudent } = useBusStore();
+  const {busFare, busDestination, busDate, busTime, busRate, busCompany, busUserAdult, busUserStudent, busRequiredTime } = useBusStore();
   
   const busInformation = {
     버스회사: busCompany,
@@ -46,7 +46,7 @@ const BusPayment = () => {
       <div className='buspayment-play'>
         <div className='buspayment-detail'>
           <div className='buspayment-detail-date'>
-            {busDate}(토) {butTime}
+            {busDate} {busTime}
           </div>
           <div className='detail-information'>
             <div className='detail-information-city'>
@@ -55,7 +55,7 @@ const BusPayment = () => {
                   출발
                 </div>
                 <div className='city-common-text'>
-                  서울경부<span>평균 4시간 소요</span>
+                  서울경부<span>평균 {busRequiredTime} 소요</span>
                 </div>
               </div>
               <div className='city-line'>

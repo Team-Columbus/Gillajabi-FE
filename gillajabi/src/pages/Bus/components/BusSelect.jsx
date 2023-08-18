@@ -49,7 +49,7 @@ const BusSelect = () => {
           </div>  
           <div className='detail-excuse'>
             <div className='excuse-line'>
-              <span class="excuse-emphasis">코로나19</span>&nbsp;로 인하여 일부 노선의
+              <span className="excuse-emphasis">코로나19</span>&nbsp;로 인하여 일부 노선의
             </div>
             <div className='excuse-line'>
               운행 시간이 변경 및 조정될 수 있습니다.
