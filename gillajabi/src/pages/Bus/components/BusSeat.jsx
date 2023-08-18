@@ -7,7 +7,7 @@ import '../../../styles/pages/Bus/BusSeat.css';
 
 const BusSeat = () => {
 
-  const {setBusFare, busDestination} = useBusStore();
+  const {setBusFare, busDestination, setBusUserAdult, setBusUserStudent } = useBusStore();
   const {handlePage} = useBusContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -80,6 +80,13 @@ const BusSeat = () => {
   useEffect(() => {
     setBusFare(totalPrice);
   }, [totalPrice])
+
+
+  const handlePayment = () => {
+    setBusUserAdult(seatInformation[0]);
+    setBusUserStudent(seatInformation[1]);
+    handlePage('BusPayment')
+  }
 
   return (
     <div className='busseat'>
@@ -200,7 +207,7 @@ const BusSeat = () => {
           <div className='text-price'>
             총 결제 금액
             <div className='price-button'>
-              {totalPrice}원 <button onClick={() => handlePage('BusPayment')}>결제하기</button>
+              {totalPrice}원 <button onClick={() => handlePayment()}>결제하기</button>
             </div>
           </div>
         </div>

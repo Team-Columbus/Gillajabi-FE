@@ -8,10 +8,10 @@ const TicketPaymentModal = (props) => {
 
   const [count, setCount] = useState(7);
   const [ticketStatus, setTicketStatus] = useState('발권중');
-  const {busRate, busFare } = useBusStore();
+  const {busRate, busFare, busUserAdult, busUserStudent  } = useBusStore();
 
-  const ticketMenu = ['승차권 종류', '요금', '좌석', '발권 상태']
-  const ticketData = [busRate, busFare, '좌석', ticketStatus]
+  const ticketMenu = ['승차권 종류', '요금', '티켓수량', '발권 상태']
+  const ticketData = [busRate, busFare, busUserAdult+busUserStudent, ticketStatus]
   
   useEffect(() => {
     if (!props.isOpen) return;
