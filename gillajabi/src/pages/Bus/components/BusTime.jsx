@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react';
+import {React, useEffect, useState} from 'react';
 import BusHeader from './BusHeader';
 import axios from 'axios';
 import { useBusStore } from '../../../stores/BusStore';
@@ -9,25 +9,36 @@ const BusTime = () => {
 
   const {handlePage} = useBusContext();
 
-  const {busDate, busDestination, setBusTime, setBusRate, setBusCompany} = useBusStore();
+  const {busDate, busDestination, setBusTime, setBusRate, setBusCompany, setBusSeat,setBusRequiredTime } = useBusStore();
   const timeList = ['전체', '02:00', '04:00', '06:30', '08:00', '10:00', '12:00', '14:00', '16:00']
-  const menuList= ['출발시간', '회사/소요시간', '등급', '잔여석']
+  const menuList= ['출발시간', '소요시간', '회사', '등급', '잔여석']
 
-  const busData = [
-    ['02:20', '동양 (평균 4시간)', '심야우등', '20'],
-    ['04:20', '동양 (평균 4시간)', '우등', '21'],
-    ['06:00', '금호 (평균 4시간)', '우등', '17'],
-    ['08:30', '동양 (평균 4시간)', '일반', '8'],
-    ['10:50', '동양 (평균 4시간)', '프리미엄', '12'],
-    ['12:40', '금호 (평균 4시간)', '우등', '10'],
-    ['14:30', '금호 (평균 4시간)', '일반', '27'],
-    ['16:50', '동양 (평균 4시간)', '우등', '4'],
-  ]
+  const [busList, setBusList] = useState(null);
+
+  useEffect(() => {
+      getBusTime();
+    }, [])
+
+  const getBusTime = async () => {
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/traffics/bus_ticket/`, {
+          start_terminal : '서울',
+          arrive_terminal : busDestination
+        },
+      )
+      setBusList(response.data);
+    } catch (error) {
+      alert('실패했습니다. 다시 시도해 주세요.')
+      console.error(error.message)
+    }
+  }
 
   const getBusInformain = (data) => {
-    setBusTime(data[0])
-    setBusRate(data[2])
-    setBusCompany(data[1].substring(0, 2))
+    setBusTime(data.start_time)
+    setBusRate(data.rate)
+    setBusCompany(data.company)
+    setBusSeat(data.rest_seat)
+    setBusRequiredTime(data.required_time)
     handlePage('BusSeat')
   }
 
@@ -66,12 +77,13 @@ const BusTime = () => {
           ))}
           </div>
           <div className='bustime-detail-information'>
-            {busData.map((data, index) => (
+            {busList?.map((data, index) => (
               <div key={index} className='bustime-drive' onClick={() => getBusInformain(data)}>
-                <div className='time'>{data[0]}</div>
-                <div className='info'>{data[1]}</div>
-                <div className='type'>{data[2]}</div>
-                <div className='seats'>{data[3]}</div>
+                <div className='time'>{data.start_time}</div>
+                <div className='driveTime'>{data.required_time}</div>
+                <div className='info'>{data.company}</div>
+                <div className='type'>{data.rate}</div>
+                <div className='seats'>{data.rest_seat}</div>
               </div>
             ))}
           </div>
