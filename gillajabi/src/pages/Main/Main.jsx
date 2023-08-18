@@ -23,11 +23,24 @@ const Main = () => {
     ATM: Atm
   };
 
-  const moveCategory = (category) => {
-    navigate(`/category/${category}`)
+  const moveMovie = () => {
+    navigate('/movie')
+  }
+
+  const moveBus = () => {
+    navigate('/bus')
   }
 
   const movePractice = (category) => {
+    if (category === '영화관') {
+      moveMovie();
+      return null;
+    }
+    
+    if(category === '교통') {
+      moveBus();
+      return null;
+    }
     navigate(`/practice/${category}`)
   }
 
@@ -37,8 +50,8 @@ const Main = () => {
       <Sentence mainSentence={mainSentence} subSentence={subSentence} />
       <div className='main-category'>
         {categoryList.map((info, index) => (
-          <div className='main-categoryImg' onClick={info === '무인민원발급기' || info === 'ATM' ? () => movePractice(info) : () => moveCategory(info)} key={index}>
-            <img src={imageMap[info]} alt='categoryImg' />
+          <div className='main-categoryImg' onClick={ () => movePractice(info)}  key={index}>
+            <img src={imageMap[info]} alt='categoryImg'/>
           </div>
         ))}
       </div>
