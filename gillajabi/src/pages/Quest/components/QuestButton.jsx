@@ -3,7 +3,7 @@ import Button from '../../../components/Button';
 import axios from 'axios';
 
 const QuestButton = ({ isAccept, isDone, setIsAccept }) => {
-  
+
   const [buttonStyle, setButtonStyle] = useState({
     styleType : 'Large_White',
     buttonText : '수락하기'
@@ -14,16 +14,15 @@ const QuestButton = ({ isAccept, isDone, setIsAccept }) => {
   },[isAccept, isDone]);
 
   const handleButtonStyle = () =>{
-    if (isDone) {
-      setButtonStyle({
-        styleType : 'Movie_Gray',
-        buttonText :'수행 완료',
-      });
-    } 
     if (isAccept) {    
       setButtonStyle({
         styleType : 'Large_Orange',
         buttonText : '수락 중',
+      });
+    } if (isDone) {
+      setButtonStyle({
+        styleType : 'Movie_Gray',
+        buttonText : '수행 완료',
       });
     } else {
       setButtonStyle({

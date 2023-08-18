@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import ticketImg from '../../../../assets/Movie/movie_ticket.png';
 import Button from '../../../../components/Button';
+import { useMovieStore } from '../../../../stores/MovieStore';
+import { useUserStore } from '../../../../stores/userStore';
+import axios from 'axios';
 
 const MoviePrintTicketModal = () => {
   const [progress, setProgress] = useState(0);
   const [isLoad, setIsLoad] = useState(true);
+  const [questAnswer, setQuestAnswer] = useState(null);
+
+  const { userCount, selectedMovieInfo } = useMovieStore();
+  const { user } = useUserStore();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,6 +27,45 @@ const MoviePrintTicketModal = () => {
       clearInterval(interval);
     };
   }, [progress]);
+
+  useEffect(()=>{
+    setQuestAnswer({
+      category: "영화관",
+      title: selectedMovieInfo?.title,
+      time: selectedMovieInfo?.start_time,
+      ticket: {
+        normal: userCount?.normal,
+        teen: userCount?.teen,
+        disabled: userCount?.disabled,
+        silver: userCount?.silver,
+      }
+    })
+  },[selectedMovieInfo]);
+
+  const checkQuestCondition = () =>{
+    if(user && user.is_accept){
+      handleQuestClear();
+    }
+  }
+
+  const handleQuestClear = async (e) => {
+    try {
+      const token = localStorage.getItem('accessToken');
+      const response = await axios.post(`${process.env.REACT_APP_API}/api/quests/check/`,
+        {
+          answer: questAnswer,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
   return (
     <div className='movie-printticket-modal'>
@@ -44,7 +90,7 @@ const MoviePrintTicketModal = () => {
         </div>
       )}
       { !isLoad && (
-        <Button styleType={'Movie_Gray'}>
+        <Button styleType={'Movie_Gray'} onClick={checkQuestCondition}>
           예매 완료
         </Button>
       )}
