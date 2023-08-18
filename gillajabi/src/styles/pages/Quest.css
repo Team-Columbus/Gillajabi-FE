@@ -99,3 +99,7 @@
 .quest-moviequest-usercount > p{
   margin-right: 2%;
 }
+
+.quest-content > button{
+  width : 40%;
+}

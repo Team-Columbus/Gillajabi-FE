@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import MovieQuest from './components/MovieQuest';
 import Navbar from '../../components/Navbar';
-import Button from '../../components/Button';
+import QuestButton from './components/QuestButton';
 import axios from 'axios';
 import '../../styles/pages/Quest.css';
 
 const Quest = () => {
 
   const [quest, setQuest] = useState(null);
+  const [isAccept, setIsAccept] = useState(false);
+  const [isDone, setIsDone] = useState(false);
 
   let questComponent;
   let questId;
@@ -25,6 +27,8 @@ const Quest = () => {
         },
       });
       setQuest(response.data);
+      setIsAccept(response.data.is_accept);
+      setIsDone(response.data.is_do);
     } catch (error) {
       console.error(error.message);
     }
@@ -60,9 +64,7 @@ const Quest = () => {
             </div>
           </div>
         </div>
-        <Button>
-          수락하기
-        </Button>
+        <QuestButton isAccept={isAccept} isDone={isDone} setIsAccept={setIsAccept}/>
       </div>
     </div>
   );
