@@ -15,15 +15,26 @@ const Practice = () => {
   const subSentence = '원하시는 연습 방식을 선택해주세요'
 
   const previewPage = () => {
-    navigate(`/preview/${practicePath}`)
+    handleAlert();
+    // navigate(`/preview/${practicePath}`);
   }
 
   const togetherPage = () => {
-    navigate(`/level/${practicePath}`)
+    handleAlert();
+    // navigate(`/level/${practicePath}`)
   }
 
   const alonePage = () => {
-    //혼자 하기
+    if(practicePath === '교통'){
+      navigate(`/Bus`);
+    }
+    if(practicePath === '영화관'){
+      navigate(`/Movie`);
+    }
+  }
+
+  const handleAlert = () =>{
+    alert('개발중인 기능입니다 😫');
   }
 
   const practiceList = [

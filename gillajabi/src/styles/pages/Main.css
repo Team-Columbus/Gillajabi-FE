@@ -41,6 +41,7 @@
 
 .main-categoryImg:hover {
   transform: translateY(-10px);
+  cursor: pointer;
 }
 
 .main-categoryImg img {
