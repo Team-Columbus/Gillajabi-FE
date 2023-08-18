@@ -40,7 +40,7 @@ const Navbar = () => {
 
       {/* 구독 상태일 경우: 오늘의 문제 */}
       {isSubscribe && (
-        <div className='navbar-img' onClick={() => navigate('quest')}>
+        <div className='navbar-img' onClick={() => navigate('/quest')}>
           <img src= {Solve} alt='solve'/>
         </div>        
       )}
