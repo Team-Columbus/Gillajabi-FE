@@ -9,7 +9,8 @@ body {
   min-width: 260px;
   margin: 0 auto;
   box-sizing: border-box;
-  border: 2px solid black;
+  border: 7px solid rgb(59, 59, 59);
+  border-radius: 20px;
   height : 100vh;
   transform-origin: top left;
   transition: transform 0.3s ease-in-out;
