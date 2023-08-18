@@ -15,6 +15,10 @@ const Edit = () => {
   }
 
   const editComplete = async () => {
+    if(userName.length === 0 ) {
+      alert("이름을 입력해주세요")
+      return null;
+    }
     try {
       const token = localStorage.getItem('accessToken');
       const response = await axios.put(`${process.env.REACT_APP_API}/api/users/profile/update/`, {
