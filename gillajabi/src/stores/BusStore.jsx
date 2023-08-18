@@ -5,11 +5,13 @@ export const useBusStore = create((set) => ({
   busDate: '',
   busDestination: '',
   busFare: '',
-  butTime:'',
+  busTime:'',
   busRate:'',
   busCompany:'',
   busUserAdult:'',
   busUserStudent:'',
+  busSeat:'',
+  busRequiredTime:'',
 
 
   setBusDate: (date) => set({busDate: date}),
@@ -20,5 +22,6 @@ export const useBusStore = create((set) => ({
   setBusCompany: (company) => set({busCompany: company}),
   setBusUserAdult: (userAdult) => set({busUserAdult: userAdult}),
   setBusUserStudent: (userStudnt) => set({busUserStudent: userStudnt}),
-
+  setBusSeat: (seat) => set({busSeat: seat}),
+  setBusRequiredTime: (requiredTime) => set({busRequiredTime: requiredTime}),
 }));

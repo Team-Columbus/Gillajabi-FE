@@ -19,7 +19,8 @@
   display: flex;
   justify-content: space-between;
   font-size: 1.4em;
-  color: aqua;
+  color: black ;
+  font-weight: bold;
   width: 80%;
   margin: 4% 0px;
   height: 5%;

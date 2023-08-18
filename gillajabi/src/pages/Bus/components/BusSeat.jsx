@@ -7,7 +7,7 @@ import '../../../styles/pages/Bus/BusSeat.css';
 
 const BusSeat = () => {
 
-  const {setBusFare, busDestination, setBusUserAdult, setBusUserStudent } = useBusStore();
+  const {setBusFare, busDestination, setBusUserAdult, setBusUserStudent, busSeat } = useBusStore();
   const {handlePage} = useBusContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -66,11 +66,14 @@ const BusSeat = () => {
   const [randomIndexes, setRandomIndexes] = useState([]); 
 
   useEffect(() => {
-    const randomNum = Math.floor(Math.random() * 28); 
+    const randomNum = 28 - parseInt(busSeat)
     const newRandomIndexes = [];
 
     for (let i = 0; i < randomNum; i++) {
-      const randomIndex = Math.floor(Math.random() * 28); 
+      const randomIndex = Math.floor(Math.random() * 28); //busSeat
+      if(newRandomIndexes.includes(randomIndex)) {
+        i--;
+      }
       newRandomIndexes.push(randomIndex);
     }
 
