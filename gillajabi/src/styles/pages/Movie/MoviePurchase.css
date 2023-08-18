@@ -1,0 +1,255 @@
+.movie-purchase{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width : 100%;
+  height: 100%;
+  background-color: #3e3838;
+  color : #e2e2e2;
+}
+
+/* 결제 header */
+.movie-purchase-header{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height : 10%;
+  padding : 1% 5%;
+  background-color: #292b31;
+}
+.movie-purchase-header > #header-payment{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width : 30%;
+}
+.movie-purchase-header > #header-payment p:nth-child(1){
+  font-size: 0.8em;
+}
+.movie-purchase-header > #header-payment p:nth-child(2){
+  font-size: 1.8em;
+  color : #bb9e8b;
+}
+
+/* 결제 content */
+.movie-purchase-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 85%;
+}
+.movie-purchase-content > p{
+  font-size: 1.5em;
+}
+.movie-purchase-content-pay {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);;
+  width: 80%;
+  height: 80%;
+}
+.movie-purchase-content-pay-item{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding : 5%;
+}
+.movie-purchase-content-pay-item > p{
+  font-size: 1.3em;
+}
+
+/* 결제 이미지 */
+.movie-purchase-content-pay-item > #imgwrapper {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  padding: 4%;
+}
+.movie-purchase-content-pay-item > #imgwrapper:hover {
+  padding: 1%;
+}
+.movie-purchase-content-pay-item > #imgwrapper > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.movie-purchase-content-pay > #payCard{
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+.movie-purchase-content-pay > #payCash{
+  border-bottom: 1px solid #e2e2e2;
+}
+.movie-purchase-content-pay > #payKakao{
+  border-right: 1px solid #e2e2e2;
+}
+
+/* 결제 모달 컴포넌트 */
+.movie-purchase-modal{
+  height : 100%;
+}
+
+/* 결제 설명 파트 */
+.movie-purchase-modal-explanation{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35%;
+  margin-bottom: 5%;
+  font-size: 1.1em;
+}
+.movie-purchase-modal-explanation > p:nth-child(1){
+  font-size: 1.4em;
+  margin-bottom: 2%;
+}
+.movie-purchase-modal-explanation > p:nth-child(4){
+  color : #ff911b;
+  margin-bottom: 2%;
+}
+.movie-purchase-modal-explanation > p:nth-child(4){
+  font-weight: bold;
+}
+.movie-purchase-modal-explanation > p:nth-child(5){
+  color : #ff911b;
+  font-weight: bold;
+}
+/* 결제 키오스크 파트 */
+.movie-purchase-modal-description{
+  box-sizing: border-box;
+  height : 65%;
+}
+#modal-description-inlet{
+  display: flex;
+  justify-content: space-around;
+  width : 100%;
+  height: 25%;
+  color : #c1c1c1;
+}
+#modal-description-inlet-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+#modal-description-inlet-item > #item-inlet{
+  border-top: 5px solid #c1c1c1;
+  width : 80%;
+  border-radius: 20px;
+}
+#modal-description-inlet > div:nth-child(3){
+  color : white;
+  font-weight: bold;
+}
+#modal-description-inlet > div:nth-child(3) > #item-inlet{
+  border-top: 5px solid white;
+}
+
+#modal-description-outlet{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height : 75%;
+}
+#modal-description-outlet > #modal-description-outlet-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width : 100%;
+  height: 70%;
+  border : 2px solid #e2e2e2;
+  border-radius: 20px;
+}
+#modal-description-outlet-item > #item-outlet{
+  border-top: 5px solid #c1c1c1;
+  width : 25%;
+  border-radius: 20px;
+}
+#modal-description-outlet-item > #outlet-imgwrapper{
+  width : 25%;
+}
+#modal-description-outlet-item > #outlet-imgwrapper:hover{
+  transform: translateY(-5px);
+}
+#modal-description-outlet-item > #outlet-imgwrapper > img{
+  width : 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 티켓 출력 컴포넌트 */
+.movie-printticket-modal{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding : 5%;
+}
+.movie-printticket-modal p{
+  font-size: 1.3em;
+  margin-bottom: 1%;
+}
+
+.movie-printticket-modal-description{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width : 80%;
+}
+
+/* 티켓 출력 프로그레스바 */
+.movie-printticket-modal-progressbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width : 80%;
+  height: 25%;
+}
+.movie-printticket-modal-progressbar > p {
+  font-size: 1.5em;
+}
+#modal-progressbar-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+  padding : 1%;
+  border-radius: 20px;
+  border : 2px solid #e2e2e2;
+}
+#modal-progressbar-wrapper > #modal-progressbar {
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #e2e2e2;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 티켓 출력 이미지 */
+.movie-printticket-modal-imgwrapper{
+  width : 35%;
+}
+.movie-printticket-modal-imgwrapper > img{
+  width : 100%;
+  height : 100%;
+  object-fit: contain;
+}
+
+/* 티켓 출력 버튼 */
+.movie-printticket-modal > button{
+  width : 50%;
+}

@@ -1,0 +1,105 @@
+.quest{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.quest p {
+  margin : 0;
+  padding: 0;
+}
+
+/* 퀘스트 콘텐츠 */
+.quest-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height : 100%;
+  width : 100%;
+}
+.quest-content-info{
+  width : 100%;
+  height : 70%;
+}
+
+/* 퀘스트 콘텐츠 header*/
+.quest-content-header{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width : 100%;
+  height : 30%;
+}
+.quest-content-header > p:nth-child(1){
+  margin-bottom: 3%;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+.quest-content-header-category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width : 20%;
+  height : 40%;
+  border-radius: 20px;
+  font-size: 1.4em;
+  font-weight: bolder;
+}
+.quest-content-header > #movie{
+  background-color: #E5DBFE;
+  border : 4px solid #35235f;
+  color : #35235f;
+}
+.quest-content-header > #transport{
+  background-color: #cce6ff;
+  border : 4px solid #2270c5;
+  color : #2270c5;
+}
+
+/* 퀘스트 콘텐츠 detail;*/
+.quest-content-detail{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width : 100%;
+  height : 60%;
+}
+.quest-content-detail-component{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width : 100%;
+  height: 70%;
+}
+
+/* 퀘스트 콘텐츠 퀘스트;*/
+.quest-moviequest{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #E5DBFE;
+  border : 4px solid #35235f;
+  color : #35235f;
+  width : 70%;
+  height : 100%;
+  border-radius: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.quest-moviequest-usercount{
+  display: flex;
+  justify-content: center;
+  width : 100%;
+}
+.quest-moviequest-usercount > p{
+  margin-right: 2%;
+}
+
+.quest-content > button{
+  width : 40%;
+}

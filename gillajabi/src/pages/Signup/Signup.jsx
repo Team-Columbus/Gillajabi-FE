@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Welcome from './components/Welcome';
+import SignupForm from './components/SignupForm';
+import '../../styles/pages/Signup.css';
 
 const Signup = () => {
+  const [currentField, setCurrentField] = useState('name');
+
   return (
-    <div>
-      회원가입 페이지입니다.
+    <div className='signup'>
+      <div className='signup-form'>
+        {currentField === 'welcome' ? <Welcome/> 
+        : <SignupForm currentField = {currentField} setCurrentField = {setCurrentField}/>}
+      </div>
     </div>
   );
 };

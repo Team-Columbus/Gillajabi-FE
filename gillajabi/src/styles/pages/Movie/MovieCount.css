@@ -1,0 +1,84 @@
+.movie-count{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width : 100%;
+  height : 100%;
+  animation: fadeInUpMovie 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+@keyframes fadeInUpMovie {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movie-count-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+.movie-count-header p:nth-child(1){
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+.movie-count-header p:nth-child(2) > span{
+  color : #e458cc;
+}
+.movie-count-header p:nth-child(3){
+  font-size: 1.2em;
+}
+.movie-count-header p:nth-child(3) > span{
+  font-size: 2em;
+}
+
+/* 관람 인원수 선택 영역 */
+.movie-count-select{
+  height: 60%;
+}
+.movie-count-select-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 25%;
+  border-bottom: 1px solid #ffffff;
+}
+.movie-count-select-item > span{
+  font-size: 1.4em;
+}
+.movie-count-selector{
+  width : 80%;
+  display: flex;
+  justify-content: space-around;
+}
+.movie-count-selector > button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  text-align: center;
+  color : #ffffff;
+  background : none;
+  border-radius: 50%;
+  width : 5%;
+  aspect-ratio: 1/1;
+}
+.movie-count-selector > .selected{
+  background-color: rgb(245, 58, 182);
+}
+
+/* 버튼 */
+.movie-count-button{
+  display: flex;
+  justify-content: center;
+  width : 100%;
+}
