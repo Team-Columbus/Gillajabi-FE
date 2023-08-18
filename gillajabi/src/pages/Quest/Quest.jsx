@@ -3,6 +3,7 @@ import MovieQuest from './components/MovieQuest';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import axios from 'axios';
+import '../../styles/pages/Quest.css';
 
 const Quest = () => {
 
