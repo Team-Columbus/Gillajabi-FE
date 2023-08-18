@@ -24,12 +24,12 @@ const QuestButton = ({ isAccept, isDone, setIsAccept }) => {
         styleType : 'Movie_Gray',
         buttonText : '수행 완료',
       });
-    } else {
+    } if (!isAccept && !isDone){
       setButtonStyle({
         styleType : 'Large_White',
         buttonText : '수락하기',
       });
-    };
+    }
   }
 
   const handleAcceptQuest = async () =>{
