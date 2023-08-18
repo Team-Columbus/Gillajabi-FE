@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ticketImg from '../../../../assets/Movie/movie_ticket.png';
 import Button from '../../../../components/Button';
 import { useMovieStore } from '../../../../stores/MovieStore';
+import { useMovieContext } from '../../context/MovieContext';
 import { useUserStore } from '../../../../stores/userStore';
 import axios from 'axios';
 
@@ -11,6 +12,7 @@ const MoviePrintTicketModal = () => {
   const [questAnswer, setQuestAnswer] = useState(null);
 
   const { userCount, selectedMovieInfo } = useMovieStore();
+  const { handlePage } = useMovieContext();
   const { user } = useUserStore();
 
   useEffect(() => {
@@ -61,10 +63,18 @@ const MoviePrintTicketModal = () => {
           },
         }
       );
+      alertQuestSuccess(response.data.result);
     } catch (error) {
       console.error(error.message);
     }
   };
+
+  const alertQuestSuccess = (isSuccess) =>{
+    if(isSuccess){
+      alert('퀘스트 성공!! 🎉');
+    } 
+    handlePage('Moviemain');
+  }
 
   return (
     <div className='movie-printticket-modal'>
