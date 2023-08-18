@@ -12,13 +12,12 @@ const BusPayment = () => {
   const [isPaymentModal, setIsPaymentModal] = useState(false);
   const [isTicketModal, setIsTicketModal] = useState(false)
   const {handlePage} = useBusContext();
-  const {busFare, busDestination, busDate, butTime, busRate, busCompany } = useBusStore();
+  const {busFare, busDestination, busDate, butTime, busRate, busCompany, busUserAdult, busUserStudent } = useBusStore();
   
   const busInformation = {
     버스회사: busCompany,
     버스등급: busRate,
-    좌석번호: '18, 21',
-    티켓수량: '2 (일반 2매)'
+    티켓수량: busUserAdult + busUserStudent,
   }
 
   const openPaymentModal = () => {
@@ -72,7 +71,14 @@ const BusPayment = () => {
             </div>
             <div className='detail-information-bus'>
               {Object.entries(busInformation).map(([key, value]) => (
-                <div className='bus-information'>{key}<span>{value}</span></div>
+                <div className='bus-information'>
+                  {key}<span>{value} {key==='티켓수량' ? (
+                  <>
+                    {busUserAdult !== 0 && <> / 일반 {busUserAdult}</>}
+                    {busUserStudent !== 0 && <> / 초등생 {busUserStudent}</>}
+                  </>
+                  ) : null}</span>
+                </div>
               ))}
             </div>
           </div>
