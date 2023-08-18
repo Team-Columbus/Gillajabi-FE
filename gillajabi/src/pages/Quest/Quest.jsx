@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import MovieQuest from './components/MovieQuest';
 import Navbar from '../../components/Navbar';
 import Button from '../../components/Button';
 import axios from 'axios';
@@ -30,6 +31,7 @@ const Quest = () => {
 
   switch (quest?.content.category) {
     case '영화관':
+      questComponent = <MovieQuest info={quest.content}/>
       questId='movie'
       break;
     case '버스':
